@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tristan Ryoma Fuchs — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* ---- CV の見た目。サイトと同じ配色（濃ティール #3F8070 / ティール #3AB0A2）と書体 ---- */
+  @page { size: A4; margin: 13mm 15mm 14mm 15mm; }
+  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
+        font-size:9.3pt; line-height:1.36; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  a{ color:var(--teal-dark); text-decoration:none; }
+
+  /* header */
+  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:2.6mm; border-bottom:2.5pt solid var(--teal); margin-bottom:3.5mm; }
+  h1{ font-size:20pt; font-weight:900; margin:0; letter-spacing:-.01em; line-height:1.15; }
+  .name-ja{ font-size:10.5pt; font-weight:500; color:var(--ink-soft); margin:1mm 0 0; }
+  .role{ margin:2.2mm 0 0; font-size:10.2pt; color:var(--ink-soft); line-height:1.4; }
+  .contact{ text-align:right; font-size:9pt; color:var(--ink-soft); line-height:1.55; white-space:nowrap; }
+  .contact b{ color:var(--ink); font-weight:700; }
+
+  /* sections */
+  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:3.2mm 0 1.4mm; padding-bottom:.7mm; border-bottom:1pt solid var(--rule);
+      letter-spacing:.02em; text-transform:uppercase; page-break-after:avoid; }
+  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:2mm 0 .8mm; page-break-after:avoid; }
+  .entry{ display:grid; grid-template-columns:29mm 1fr; column-gap:3.5mm; padding:.8mm 0; page-break-inside:avoid; }
+  .cols .entry{ grid-template-columns:11mm 1fr; column-gap:3mm; }
+  .entry .when{ color:var(--muted); font-size:8.7pt; padding-top:.4mm; white-space:nowrap; }
+  .entry .title{ font-weight:700; margin:0; }
+  .entry .meta{ color:var(--ink-soft); margin:0; }
+  .meta-inline{ color:var(--ink-soft); font-weight:400; }
+  .entry .note{ color:var(--ink-soft); margin:.4mm 0 0; }
+  .tag{ display:inline-block; font-size:7.6pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.3mm 1.6mm; border-radius:2pt;
+        vertical-align:middle; margin-left:1.2mm; }
+  .tag.type{ background:#EFF7F5; color:var(--teal-dark); }
+  .tag.award{ background:#FBEDE6; color:#C94A18; }
+  .tag.plan{ border:1pt solid var(--muted); color:var(--muted); padding:.1mm 1.4mm; }
+  .me{ font-weight:700; text-decoration:underline; text-decoration-color:var(--teal); text-decoration-thickness:1.2pt; text-underline-offset:2pt; }
+  ol.pubs{ margin:0; padding-left:5.5mm; }
+  ol.pubs li{ margin:0 0 1mm; }
+  .plain{ margin:0 0 1mm; }
+  .cols{ display:grid; grid-template-columns:1.15fr 1fr; column-gap:8mm; page-break-inside:avoid; }
+  .footer{ margin-top:4mm; font-size:8.5pt; color:var(--muted); text-align:right; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Tristan Ryoma Fuchs</h1>
+    <p class="name-ja">フックストリスタン龍馬</p>
+    <p class="role">Master’s student (M2), Department of Physics, The University of Tokyo<br>
+       Arita Group · MERIT-WINGS program student</p>
+  </div>
+  <div class="contact">
+    <b>tristan@g.ecc.u-tokyo.ac.jp</b><br>
+    <a href="https://tristanfuchs1024.github.io/">tristanfuchs1024.github.io</a><br>
+    ORCID <a href="https://orcid.org/0009-0008-1109-7449">0009-0008-1109-7449</a><br>
+    GitHub <a href="https://github.com/TristanFuchs1024">TristanFuchs1024</a>
+  </div>
+</header>
+
+<h2>Research Interests</h2>
+<p class="plain">Superconductivity · first-principles (DFT) calculations. Extended Ginzburg–Landau framework for the coherence lengths and magnetic penetration depth of multiband superconductors, toward first-principles prediction of superconducting properties.</p>
+
+<h2>Education</h2>
+<div class="entry"><div class="when">Apr 2025 – present</div><div>
+  <p class="title">Master’s Program, Department of Physics, Graduate School of Science, The University of Tokyo</p>
+  <p class="meta">Supervisor: Prof. Ryotaro Arita.</p>
+</div></div>
+<div class="entry"><div class="when">Apr 2021 – Mar 2025</div><div>
+  <p class="title">B.Sc. in Physics, Department of Physics, Faculty of Science, Tohoku University</p>
+  <p class="meta">Supervisor: Prof. Takashi Koretsune.</p>
+  <p class="note">Undergraduate research: First-principles Migdal–Eliashberg calculation of the superconducting gap functions of Al and H<sub>3</sub>S.</p>
+</div></div>
+<div class="entry"><div class="when">Sep 2016 – Jun 2020</div><div>
+  <p class="title">Shanghai Jincai High School, International Division, Shanghai, China</p>
+  <p class="meta">Grades 9–12; International Baccalaureate Diploma Programme (Grades 11–12).</p>
+</div></div>
+<div class="entry"><div class="when">Apr 2008 – Aug 2016</div><div>
+  <p class="title">Shanghai Japanese School, Pudong Campus, Shanghai, China</p>
+  <p class="meta">Grades 1–9.</p>
+</div></div>
+
+<h2>Publications</h2>
+<ol class="pubs">
+  <li><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, and R. Arita, “Microscopic calculation of coherence lengths and magnetic penetration depth in multiband superconductors,” <a href="https://arxiv.org/abs/2609.06014">arXiv:2609.06014</a> [cond-mat.supr-con] (2026), under review.</li>
+</ol>
+
+<h2>Presentations</h2>
+<h3>International conferences and schools</h3>
+<div class="entry"><div class="when">Sep 2026</div><div>
+  <p class="title">Microscopic Calculation of Characteristic Length Scales in Multi-band Superconductors <span class="tag type">Poster</span> <span class="tag plan">Scheduled</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — International Conference on Strongly Correlated Electron Systems (SCES 2026), Toyama, Japan</p>
+</div></div>
+<div class="entry"><div class="when">Sep 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors <span class="tag type">Poster</span> <span class="tag plan">Scheduled</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Osaka, Japan</p>
+</div></div>
+<div class="entry"><div class="when">Feb 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Two Band Superconductors <span class="tag type">Poster</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako, Japan</p>
+</div></div>
+<div class="entry"><div class="when">Sep 2025</div><div>
+  <p class="title">Microscopic Calculation of Coherence Length and Magnetic Penetration Depth in Superconductors <span class="tag type">Poster</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — Autumn School on Correlated Electrons: Understanding Correlated Materials with DMFT, Forschungszentrum Jülich, Germany</p>
+</div></div>
+
+<h3>Domestic conferences and schools (Japan)</h3>
+<div class="entry"><div class="when">Sep 2026</div><div>
+  <p class="title">Calculation of Coherence Lengths and Magnetic Penetration Depth Based on the Real-Space Bogoliubov–de Gennes Method <span class="tag type">Poster</span> <span class="tag plan">Scheduled</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — JPS 81st Annual Meeting (Physical Society of Japan), The University of Tokyo, Komaba (in Japanese)</p>
+</div></div>
+<div class="entry"><div class="when">Sep 2026</div><div>
+  <p class="title">Microscopic Calculation of Characteristic Length Scales in Multi-band Superconductors Based on the Extended Ginzburg–Landau Method <span class="tag type">Poster</span> <span class="tag award">Best Poster Award</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — MERIT Camp 2026 (MERIT-WINGS, The University of Tokyo), Minano, Saitama</p>
+</div></div>
+<div class="entry"><div class="when">Aug 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors Based on Extended Ginzburg–Landau Theory <span class="tag type">Oral</span> <span class="tag type">Poster</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — 71st Condensed Matter Physics Summer School (物性若手夏の学校), Aso, Kumamoto (in Japanese)</p>
+</div></div>
+<div class="entry"><div class="when">May 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors <span class="tag type">Poster</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — Kickoff Meeting of the Transformative Research Area (A) “Asymmetric Quantum Matters,” Nasu, Tochigi (in Japanese)</p>
+</div></div>
+<div class="entry"><div class="when">Mar 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Two-Band Superconductors <span class="tag type">Oral</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — JPS 2026 Spring Meeting (Physical Society of Japan), online (in Japanese)</p>
+</div></div>
+<div class="entry"><div class="when">Mar 2026</div><div>
+  <p class="title">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Two-Band Superconductors <span class="tag type">Poster</span> <span class="tag award">Best Poster Award</span></p>
+  <p class="meta"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — Computational Physics Spring School 2026 (計算物理春の学校), Okinawa (in Japanese)</p>
+</div></div>
+
+<h2>Awards and Fellowships</h2>
+<div class="entry"><div class="when">Sep 2026</div><div><p class="title">Best Poster Award, MERIT Camp 2026 <span class="meta-inline">— MERIT-WINGS program, The University of Tokyo</span></p></div></div>
+<div class="entry"><div class="when">Mar 2026</div><div><p class="title">Best Poster Award, Computational Physics Spring School 2026 <span class="meta-inline">(計算物理春の学校)</span></p></div></div>
+<div class="entry"><div class="when">Oct 2025 – present</div><div><p class="title">MERIT-WINGS Program Student</p><p class="meta">World-leading Innovative Graduate Study Program for Materials Research, Information, and Technology (MERIT-WINGS), The University of Tokyo</p></div></div>
+
+<h2>Experience</h2>
+<div class="entry"><div class="when">Dec 2023 – present</div><div>
+  <p class="title">Long-Term Intern (Student Staff Lead), Nagase Brothers Inc.</p>
+  <p class="meta">Oct 2024 – present: development of internal automation tools at Yotsuya Otsuka</p>
+  <p class="meta">Dec 2023 – Mar 2026: project management at Toshin Digital University</p>
+</div></div>
+<div class="entry"><div class="when">Spring 2024</div><div>
+  <p class="title">Teaching Assistant, 学問論 (first-year general education course), Tohoku University</p>
+</div></div>
+
+<h2>Leadership and Activities</h2>
+<div class="entry"><div class="when">Oct 2025 – Sep 2026</div><div><p class="title">Deputy Organizer, MERIT Camp <span class="meta-inline">— The University of Tokyo</span></p></div></div>
+<div class="entry"><div class="when">Oct 2023 – Mar 2025</div><div><p class="title">Student Staff, Kita-Aobayama Library (Science &amp; Pharmacy Library) <span class="meta-inline">— Tohoku University</span></p></div></div>
+<div class="entry"><div class="when">Apr 2022 – Mar 2023</div><div><p class="title">Vice President, 物理の会 (“Butsuri no Kai,” physics seminar society) <span class="meta-inline">— Tohoku University</span></p></div></div>
+
+<div class="cols">
+  <div>
+    <h2>Certifications and Test Scores</h2>
+    <div class="entry"><div class="when">2026</div><div><p class="title">EIKEN Grade 1</p><p class="meta">実用英語技能検定 1級</p></div></div>
+    <div class="entry"><div class="when">2025</div><div><p class="title">Applied Information Technology Engineer Examination</p><p class="meta">応用情報技術者試験 (IPA, Japan) — passed</p></div></div>
+    <div class="entry"><div class="when">2024</div><div><p class="title">TOEFL iBT 105</p></div></div>
+    <div class="entry"><div class="when">2024</div><div><p class="title">TOEIC Listening &amp; Reading 960</p></div></div>
+    <div class="entry"><div class="when">2022</div><div><p class="title">HSK Level 4</p><p class="meta">汉语水平考试 (Chinese Proficiency Test)</p></div></div>
+  </div>
+  <div>
+    <h2>Languages and Skills</h2>
+    <p class="plain"><b>Languages:</b> Japanese (native), English (fluent), German (conversational), Chinese (basic)</p>
+    <p class="plain"><b>Programming:</b> Julia (main language for research), Python, Google Apps Script</p>
+  </div>
+</div>
+
+<p class="footer">Last updated: September 2026</p>
+</body>
+</html>
