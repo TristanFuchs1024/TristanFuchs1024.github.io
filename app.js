@@ -76,7 +76,7 @@
     return h;
   }
 
-  /* ---------- 目次・言語ボタン（サイドバーとスマホ用バーで共用） ---------- */
+  /* ---------- 目次・テーマ／言語ボタン（サイドバーとスマホ用バーで共用） ---------- */
   function navList() {
     var h = '<ul>';
     S.sections.forEach(function (sec) {
@@ -88,6 +88,12 @@
     return '<div class="langswitch" role="group" aria-label="Language">' +
            '<button type="button" data-lang="en" class="on">EN</button>' +
            '<button type="button" data-lang="ja">日本語</button></div>';
+  }
+  function themeswitch() {
+    return '<button type="button" class="themeswitch">' +
+           '<svg class="ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
+           '<svg class="ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>' +
+           '</button>';
   }
 
   /* ---------- サイドバー ---------- */
@@ -119,7 +125,7 @@
       h += '<li><a class="pill" href="' + attr(a.url) + '" target="_blank" rel="noopener"' + (a.title ? ' title="' + attr(a.title) + '"' : '') + '>' + a.label + '</a></li>';
     });
     h += '</ul></div>';
-    h += langswitch();
+    h += '<div class="topctl">' + themeswitch() + langswitch() + '</div>';
     h += '</div>';
 
     h += '<nav class="nav" aria-label="Sections"><p class="side-label">' + bi(L.sections) + '</p>' + navList() + '</nav>';
@@ -131,7 +137,7 @@
   document.querySelector('.sidebar').innerHTML = sidebar();
   // スマホ表示用: 画面上部に固定される目次バー（デスクトップでは非表示）
   document.querySelector('.sidebar').insertAdjacentHTML('afterend',
-    '<div class="mobilebar"><nav class="nav" aria-label="Sections">' + navList() + '</nav>' + langswitch() + '</div>');
+    '<div class="mobilebar"><nav class="nav" aria-label="Sections">' + navList() + '</nav>' + themeswitch() + langswitch() + '</div>');
   document.querySelector('.main .inner').innerHTML =
     S.sections.map(section).join('') + '<footer class="site-foot">' + bi(S.footer) +
     '<span class="foot-updated">' + bi(S.profile.updated) + '</span></footer>';   // 最終更新（スマホ表示のみ）
@@ -191,6 +197,45 @@
   window.addEventListener('scroll', setActive, { passive: true });
   window.addEventListener('resize', setActive);
 
+  /* ---------- ライト / ダーク切り替え ----------
+     何も選んでいなければ端末設定に従う（data-theme なし）。ボタンで選ぶと data-theme に記録し、
+     端末設定と同じモードに戻したときは記録を消して自動追従に戻す。 */
+  var themeButtons = Array.prototype.slice.call(document.querySelectorAll('.themeswitch'));
+  var darkQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function systemTheme() { return darkQuery && darkQuery.matches ? 'dark' : 'light'; }
+  function currentTheme() {
+    var o = document.documentElement.getAttribute('data-theme');
+    return (o === 'dark' || o === 'light') ? o : systemTheme();
+  }
+  function updateThemeUI() {
+    var eff = currentTheme();
+    var A = S.aria[document.documentElement.getAttribute('data-lang') === 'ja' ? 'ja' : 'en'];
+    var label = eff === 'dark' ? A.toLight : A.toDark;
+    themeButtons.forEach(function (b) { b.setAttribute('data-effective', eff); b.setAttribute('aria-label', label); b.title = label; });
+    var panel = getComputedStyle(document.documentElement).getPropertyValue('--panel').trim();
+    Array.prototype.forEach.call(document.querySelectorAll('meta[name="theme-color"]'), function (m) {
+      if (!m.dataset.orig) m.dataset.orig = m.content;
+      m.content = document.documentElement.hasAttribute('data-theme') && panel ? panel : m.dataset.orig;
+    });
+  }
+  function setTheme(override) {
+    if (override === 'dark' || override === 'light') document.documentElement.setAttribute('data-theme', override);
+    else document.documentElement.removeAttribute('data-theme');
+    try { if (override) localStorage.setItem('site-theme', override); else localStorage.removeItem('site-theme'); } catch (e) {}
+    updateThemeUI();
+  }
+  themeButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      setTheme(next === systemTheme() ? null : next);
+    });
+  });
+  if (darkQuery) {
+    var onSystemChange = function () { updateThemeUI(); };
+    if (darkQuery.addEventListener) darkQuery.addEventListener('change', onSystemChange);
+    else if (darkQuery.addListener) darkQuery.addListener(onSystemChange);
+  }
+
   /* ---------- 言語切り替え（EN / JA） ---------- */
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.langswitch button'));
   function setLang(l) {
@@ -205,6 +250,7 @@
     var tt = document.getElementById('totop'); if (tt) { tt.setAttribute('aria-label', A.top); tt.title = A.top; }
     var av = document.querySelector('.avatar'); if (av) { if (av.tagName === 'IMG') av.alt = A.photo; else av.setAttribute('aria-label', A.photo); }
     try { localStorage.setItem('site-lang', l); } catch (e) {}
+    updateThemeUI();
     try { var u = new URL(location.href); if (u.searchParams.get('lang') && u.searchParams.get('lang') !== l) { u.searchParams.set('lang', l); history.replaceState(null, '', u); } } catch (e) {}
     setActive();
   }

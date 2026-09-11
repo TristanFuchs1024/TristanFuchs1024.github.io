@@ -31,8 +31,10 @@ window.SITE = {
 
   /* ---------- 読み上げ用ラベル（画面には出ない） ---------- */
   aria: {
-    en: { lang: 'Language', sections: 'Sections', top: 'Back to top', photo: 'Portrait of Tristan Ryoma Fuchs' },
-    ja: { lang: '言語',     sections: '目次',     top: 'ページ上部へ', photo: 'フックストリスタン龍馬の写真' }
+    en: { lang: 'Language', sections: 'Sections', top: 'Back to top', photo: 'Portrait of Tristan Ryoma Fuchs',
+          toDark: 'Switch to dark mode', toLight: 'Switch to light mode' },
+    ja: { lang: '言語',     sections: '目次',     top: 'ページ上部へ', photo: 'フックストリスタン龍馬の写真',
+          toDark: 'ダークモードに切り替え', toLight: 'ライトモードに切り替え' }
   },
 
   /* ---------- サイドバー ---------- */
@@ -62,7 +64,7 @@ window.SITE = {
     labels: {
       contact:  { en: 'Contact',  ja: '連絡先' },
       email:    { en: 'Email',    ja: 'メール' },
-      copied:   { en: 'Copied!',  ja: 'コピーしました' },
+      copied:   { en: 'Copied!',  ja: 'コピー済み' },     // 「履歴書 (PDF)」が次の行に落ちない長さにしておく
       cv:       { en: 'CV (PDF)', ja: '履歴書 (PDF)' },
       profiles: { en: 'Profiles', ja: 'アカウント' },
       sections: { en: 'Sections', ja: '目次' }
@@ -247,7 +249,7 @@ window.SITE = {
           notes: [
             { en: 'Supervisor: <a href="http://www.cmpt.phys.tohoku.ac.jp/u/koretsune/index.html" target="_blank" rel="noopener">Takashi Koretsune</a>',
               ja: '指導教員：<a href="http://www.cmpt.phys.tohoku.ac.jp/u/koretsune/index_j.html" target="_blank" rel="noopener">是常隆</a>' },
-            { en: 'Undergraduate research: First-principles Migdal–Eliashberg calculation of the superconducting gap functions of Al and H<sub>3</sub>S',
+            { en: 'First-principles Migdal–Eliashberg calculation of the superconducting gap functions of Al and H<sub>3</sub>S',
               ja: '卒業研究：Al と H<sub>3</sub>S の超伝導ギャップ関数の第一原理 Migdal–Eliashberg 計算' }
           ]
         },
