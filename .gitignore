@@ -1,0 +1,6 @@
+.claude/
+_probe*.html
+_dump.html
+_err.txt
+.DS_Store
+Thumbs.db
