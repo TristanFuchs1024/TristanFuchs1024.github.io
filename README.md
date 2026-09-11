@@ -10,7 +10,7 @@
 index.html          骨格とメタ情報だけ。通常は触らない（公開URL https://tristanfuchs1024.github.io/ を設定済み）
 content.js          ★ サイトの中身はすべてここ。文言・項目の追加・修正はこのファイルだけでよい
 style.css           見た目。配色は冒頭の :root 変数で一括変更できる
-app.js              content.js からページを組み立てる処理と、言語切替・目次追従・↑ボタン。通常は触らない
+app.js              content.js からページを組み立てる処理と、言語切替・ダークモード切替・目次追従・↑ボタン。通常は触らない
 assets/profile.jpg  顔写真（正方形推奨。無ければイニシャル "TF" が表示される）
 assets/cv.pdf       CVのPDF（cv/cv.html から書き出したもの）
 assets/og.png       SNS共有時のサムネイル（1200x630、設定済み）
@@ -50,9 +50,26 @@ cv/cv.pdf           書き出したCV（assets/cv.pdf と同じもの）
 
 ## スマホ表示
 
+- 日本語ページの名前（フックストリスタン龍馬）は常に1行に収まるようにしてある（横画面は `@media (min-width: 901px)` の
+  `white-space:nowrap`、縦画面は `@media (max-width: 900px)` で画面幅に応じて字を少し縮める指定）。名前を変えたときはこの2箇所を確認する。
 - 幅900px以下では、サイドバーの代わりにコンパクトなヘッダー（写真・名前・所属、白いカードの自己紹介、ボタン列）になり、
-  目次と言語切り替えは画面上部に固定される細いバーに移ります。スマホ向けの見た目は `style.css` の
+  目次・ダークモード切替・言語切り替えは画面上部に固定される細いバーに移ります。スマホ向けの見た目は `style.css` の
   `@media (max-width: 900px)` ブロックだけで決まっており、デスクトップ表示には影響しません。
+
+## ダークモード
+
+- 初期状態は端末の設定に従う。サイドバー右上（スマホでは上部バー）の太陽／月のボタンで手動でも切り替えられる。
+  選んだモードはブラウザに記憶され（`site-theme`）、端末設定と同じモードに戻すと記憶が消えて自動追従に戻る。
+- ダークモードの色は `style.css` 冒頭の2箇所に同じ内容で書いてある（端末設定に従う場合の
+  `@media (prefers-color-scheme: dark)` と、ボタンで選んだ場合の `:root[data-theme="dark"]`）。色を変えるときは両方を直す。
+- `color-scheme` の指定により、スクロールバーなどブラウザ側の部品も表示中のモードに合わせて切り替わる。
+- ボタンの文言（読み上げ用）は `content.js` の `aria.en/ja` の `toDark` / `toLight`。
+- 色は用途で分けてある。`--teal` はアクセント（見出しの四角・↑ボタン・下線）で、ダークモードでも明るいまま。
+  `--panel` はサイドバーなど広い面で、ダークモードでは濃ティール #2F6A5C になる（暗い本文の隣で眩しくならないように）。
+  `--orange` は文字色用でダークモードでは明るくなるため、白文字を乗せる塗りには `--orange-solid` を使う。
+- 自己紹介カードと白いボタンはダークモードでも白のまま（ブランドの見た目を保つため）。
+- ライトモードの見た目は、太陽／月の切り替えボタンが増えたこと以外はダークモード対応前と変わらない（ボタン以外は全画素一致を確認済み）。
+- 印刷（PDF保存）は、ダークモードを選んでいても常にライトの配色になる。
 
 ## 日英切り替えの仕組み
 
@@ -60,6 +77,7 @@ cv/cv.pdf           書き出したCV（assets/cv.pdf と同じもの）
 - `?lang=ja` / `?lang=en` を URL に付けると、その言語で開く（リンク共有用）。
 - ページの表示には JavaScript が必要（content.js から組み立てるため）。
 - メールのボタンは押すとアドレスが「tristan at g.ecc.u-tokyo.ac.jp」の形でコピーされる（@ はページ上にもコピー内容にも含めない）。
+  押した直後の表示（`labels.copied`）は「コピー済み」のように短くしておく。長いと隣の「履歴書 (PDF)」が次の行に落ちる。
 
 ## 確認のしかた
 
@@ -77,6 +95,8 @@ python -m http.server 8123
   「ヘッダーとフッター」オフ、「背景のグラフィック」オンで保存する。2ページに収まるように文字量を調整している。
 - 書き出した PDF を `assets/cv.pdf` に上書きする（サイトの「CV (PDF)」ボタンはここを指している）。
 - 予定の発表には `Scheduled` タグ（`<span class="tag plan">Scheduled</span>`）を付け、終わったら外す。
+- 日本語・中国語の語句には `lang="ja"` / `lang="zh-Hans"` を付ける（読み上げと字形のため）。
+- 題目の末尾の語とタグが離れて折り返すときは、`<span class="nowrap">最後の語 タグ…</span>` で束ねる。
 - 学会発表がサイトと同じかどうか、更新のたびに `content.js` と見比べる。
 
 ## 顔写真
@@ -86,8 +106,9 @@ python -m http.server 8123
 
 ## 公開のしかた（GitHub Pages・無料）
 
-1. 公開用リポジトリは https://github.com/TristanFuchs1024/TristanFuchs1024.github.io 。
-2. `index.html`、`content.js`、`style.css`、`app.js`、`assets/`、`cv/`、`.nojekyll` を push する。
+1. GitHub の既存リポジトリ `username.github.io` を `TristanFuchs1024.github.io` にリネームする
+   （Settings → General → Repository name）。名前が一致しないと Pages のトップにならない。
+2. `index.html`、`content.js`、`style.css`、`app.js`、`assets/` を push する。
 3. Settings → Pages → Branch を `main` / `(root)` にして Save。
 4. 数分後に `https://tristanfuchs1024.github.io/` で公開される。
 5. ORCID のプロフィールにサイトURL（https://tristanfuchs1024.github.io/）と arXiv 論文を登録しておくと、検索から辿りやすくなる。
