@@ -104,14 +104,21 @@ python -m http.server 8123
 - `assets/profile.jpg` は正方形（現在 400×400）。差し替えるときは顔が中央に来るように正方形に切り抜いた JPEG を同名で上書きする。
   サイトでは丸く切り抜かれて表示される（デスクトップ 112px、スマホ 64px）。
 
-## 公開のしかた（GitHub Pages・無料）
+## 公開先と更新のしかた（GitHub Pages）
 
-1. GitHub の既存リポジトリ `username.github.io` を `TristanFuchs1024.github.io` にリネームする
-   （Settings → General → Repository name）。名前が一致しないと Pages のトップにならない。
-2. `index.html`、`content.js`、`style.css`、`app.js`、`assets/` を push する。
-3. Settings → Pages → Branch を `main` / `(root)` にして Save。
-4. 数分後に `https://tristanfuchs1024.github.io/` で公開される。
-5. ORCID のプロフィールにサイトURL（https://tristanfuchs1024.github.io/）と arXiv 論文を登録しておくと、検索から辿りやすくなる。
+- 公開URL: https://tristanfuchs1024.github.io/ （リポジトリ `TristanFuchs1024/TristanFuchs1024.github.io`、`main` ブランチ直下を配信）
+- 作業用のクローンは `C:\Users\Tristan\Desktop\TristanFuchs1024.github.io` にある。ここで編集して commit し、`git push` すれば
+  1分ほどで公開に反映される。
+
+```bash
+cd C:/Users/Tristan/Desktop/TristanFuchs1024.github.io
+git add -A
+git commit -m "内容の更新"
+git push
+```
+
+- 発表の追加や CV の差し替えなど内容の変更は `content.js` と `cv/`（PDF を書き出して `assets/cv.pdf` にも置く）を編集する。
+- ORCID のプロフィールにサイトURL（https://tristanfuchs1024.github.io/）と arXiv 論文を登録しておくと、検索から辿りやすくなる。
 
 ## 更新の習慣
 
