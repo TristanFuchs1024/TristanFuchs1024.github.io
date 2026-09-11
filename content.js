@@ -290,11 +290,11 @@ window.SITE = {
           ]
         },
         {
-          title: { en: 'Industry', ja: 'インターンシップ' },
+          title: { en: 'Industry', ja: '企業での活動' },
           items: [
             {
               when: { en: 'Dec 2023 – present', ja: '2023年12月 – 現在' },
-              title: { en: 'Long-Term Intern (Student Staff Lead) — Nagase Brothers Inc.', ja: '長期インターン（教務研究員リーダー）— 株式会社ナガセ' },
+              title: { en: 'Student Staff Lead — Nagase Brothers Inc.', ja: '教務研究員リーダー — 株式会社ナガセ' },
               notes: [
                 { en: 'Oct 2024 – present: development of internal automation tools at Yotsuya Otsuka',
                   ja: '2024年10月 – 現在：四谷大塚での業務自動化ツール開発' },
