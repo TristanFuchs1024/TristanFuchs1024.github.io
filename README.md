@@ -16,6 +16,7 @@ assets/cv.pdf       CVのPDF（cv/cv.html から書き出したもの）
 assets/og.png       SNS共有時のサムネイル（1200x630、設定済み）
 cv/cv.html          英語CVの元データ（HTML）。内容を直したらここを編集して PDF を書き出し直す
 cv/cv.pdf           書き出したCV（assets/cv.pdf と同じもの）
+google8042e5ad13679fbd.html  Google Search Console の所有権確認用。中身は触らず、消さない
 ```
 
 ## 内容の編集のしかた（content.js）
