@@ -142,7 +142,7 @@ window.SITE = {
               id: 'pres-jps2026a',
               when: { en: 'Sep 2026', ja: '2026年9月' },
               title: '実空間BdG法に基づくコヒーレンス長と磁場侵入長の計算',
-              badges: [POSTER, UPCOMING],
+              badges: [POSTER],
               meta: AUTHORS_JA + ' — 日本物理学会 第81回年次大会（領域6、東京大学 駒場キャンパス）'
             },
             {
