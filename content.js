@@ -73,7 +73,7 @@ window.SITE = {
     profiles: [
       { label: 'ORCID',  url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
       { label: 'GitHub', url: 'https://github.com/TristanFuchs1024' },
-      { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
+      { label: 'Scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ', title: 'Google Scholar' }
     ],
     updated: { en: 'Last updated: September 2026', ja: '最終更新：2026年9月' }
   },
