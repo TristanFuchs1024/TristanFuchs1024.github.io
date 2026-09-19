@@ -69,11 +69,11 @@ window.SITE = {
       profiles: { en: 'Profiles', ja: 'アカウント' },
       sections: { en: 'Sections', ja: '目次' }
     },
-    /* 外部アカウント */
+    /* 外部アカウント。icon はアイコンの種類（app.js の ICONS のキー） */
     profiles: [
-      { label: 'ORCID',  url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
-      { label: 'GitHub', url: 'https://github.com/TristanFuchs1024' },
-      { label: 'Scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ', title: 'Google Scholar' }
+      { label: 'ORCID',          icon: 'orcid',   url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
+      { label: 'GitHub',         icon: 'github',  url: 'https://github.com/TristanFuchs1024' },
+      { label: 'Google Scholar', icon: 'scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
     ],
     updated: { en: 'Last updated: September 2026', ja: '最終更新：2026年9月' }
   },
@@ -109,7 +109,7 @@ window.SITE = {
           items: [
             {
               id: 'pres-iqms2026',
-              when: { en: 'Nov–Dec 2026', ja: '2026年11–12月' },
+              when: { en: 'Dec 2026', ja: '2026年12月' },
               title: 'Microscopic Calculation of Characteristic Length Scales in Multi-Band Superconductors',
               badges: [POSTER, UPCOMING],
               meta: AUTHORS_EN + ' — International Quantum Materials Symposium (i‑QMS 2026), Phoenix Island Resort, Jeju, Korea'

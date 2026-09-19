@@ -42,6 +42,8 @@ google8042e5ad13679fbd.html  Google Search Console の所有権確認用。中�
 - セクションの順番・目次は `sections` 配列の順番で決まる。セクションを消すときは配列から要素を削除するだけ。
 - 論文が採択されたら、`publications` の `venue` を誌名・巻・ページ（DOI リンク付き）に書き換え、`badge` を削除する。
 - 発表予定の項目には `UPCOMING` バッジを付け、発表が終わったら外す。
+- `profiles` の項目は `icon: 'orcid' | 'github' | 'scholar'` でアイコンだけの丸いボタンになる（アイコンの図形は
+  `app.js` の `ICONS`）。`icon` が無い項目・知らない名前の項目は、これまでどおり `label` の文字が出る。
 
 ## 表記のルール（現在の方針）
 
