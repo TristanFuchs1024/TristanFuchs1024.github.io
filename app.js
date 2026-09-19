@@ -123,17 +123,20 @@
     h += '<div class="linkgroups">';
     h += '<div><p class="side-label">' + bi(L.contact) + '</p><ul class="pills">';
     h += '<li><button type="button" class="pill" id="mail" title="' + attr(addr) + '" data-addr="' + attr(addr) + '">' +
-         '<svg viewBox="0 0 24 24"><path d="M2 5h20v14H2z M4 7v.5l8 5 8-5V7H4z M4 9.8V17h16V9.8l-8 5z"/></svg>' +
+         '<svg class="ico-mail" viewBox="0 0 24 24"><path d="M2 5h20v14H2z M4 7v.5l8 5 8-5V7H4z M4 9.8V17h16V9.8l-8 5z"/></svg>' +
+         '<svg class="ico-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.3 4.2 12l1.5-1.5 3.8 3.8 8.8-8.8 1.5 1.5z"/></svg>' +
          '<span class="mail-label">' + bi(L.email) + '</span></button></li>';
-    h += '<li><a class="pill primary" href="' + attr(P.cv) + '" target="_blank" rel="noopener">' + bi(L.cv) + '</a></li>';
+    // 「 (PDF)」はスマホでは隠すので、文言（content.js）と分けてここで足す
+    h += '<li><a class="pill primary" href="' + attr(P.cv) + '" target="_blank" rel="noopener">' + bi(L.cv) + '<span class="pdf"> (PDF)</span></a></li>';
     h += '</ul></div>';
     h += '<div><p class="side-label">' + bi(L.profiles) + '</p><ul class="pills icons">';
     P.profiles.forEach(function (a) {
-      var ico = ICONS[a.icon];   // アイコンがあるものは丸いアイコンだけのピル、無いものは従来どおり文字
+      var ico = ICONS[a.icon];   // アイコンがあるものはアイコン＋名前（スマホでは名前を隠して丸く）、無いものは従来どおり文字
       h += '<li><a class="pill" href="' + attr(a.url) + '" target="_blank" rel="noopener"';
       if (typeof ico === 'string') {
         h += ' title="' + attr(a.title || a.label) + '" aria-label="' + attr(a.label) + '">' +
-             '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ico + '"/></svg>';
+             '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="' + ico + '"/></svg>' +
+             '<span class="lbl">' + a.label + '</span>';
       } else {
         h += (a.title ? ' title="' + attr(a.title) + '"' : '') + '>' + a.label;
       }
@@ -156,6 +159,24 @@
   document.querySelector('.main .inner').innerHTML =
     S.sections.map(section).join('') + '<footer class="site-foot">' + bi(S.footer) +
     '<span class="foot-updated">' + bi(S.profile.updated) + '</span></footer>';   // 最終更新（スマホ表示のみ）
+
+  /* ---------- サイドバーの高さ合わせ（PC表示のみ） ----------
+     中身が画面より高いときは中でスクロールさせず、中身の高さのままページと一緒に上へ動き、
+     下端が画面下端に来たところで止まる。収まるときは従来どおり 100vh で固定。 */
+  var sidebarEl = document.querySelector('.sidebar');
+  function fitSidebar() {
+    if (window.innerWidth <= 900) { sidebarEl.classList.remove('tall'); return; }
+    sidebarEl.classList.remove('tall');                 // 一度戻すと scrollHeight が中身の高さになる
+    sidebarEl.style.overflowY = 'hidden';               // 測る間だけスクロールバーを出さない（幅が変わると折り返しも変わる）
+    var over = sidebarEl.scrollHeight - window.innerHeight;
+    sidebarEl.style.overflowY = '';
+    if (over > 0) { sidebarEl.style.setProperty('--sb-over', String(over)); sidebarEl.classList.add('tall'); }
+    else sidebarEl.style.removeProperty('--sb-over');
+  }
+  fitSidebar();
+  window.addEventListener('load', fitSidebar);
+  window.addEventListener('resize', fitSidebar);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSidebar);   // 書体が届くと高さが変わる
 
   // 写真が無いときはイニシャルを表示
   var img = document.querySelector('img.avatar');
@@ -183,14 +204,17 @@
   }
   mail.addEventListener('click', function () {
     var label = mail.querySelector('.mail-label');
+    function reset() { label.innerHTML = bi(S.profile.labels.email); mail.classList.remove('is-copied', 'is-fallback'); }
     copyText(mail.dataset.addr).then(function () {
       label.innerHTML = bi(S.profile.labels.copied);
+      mail.classList.add('is-copied');                        // 文字を隠すスマホ表示では封筒をチェックに変える
       clearTimeout(mailTimer);
-      mailTimer = setTimeout(function () { label.innerHTML = bi(S.profile.labels.email); }, 1600);
+      mailTimer = setTimeout(reset, 1600);
     }, function () {                                          // コピーできない環境ではアドレスを表示
       label.textContent = mail.dataset.addr;
+      mail.classList.add('is-fallback');                      // スマホ表示でもこの間だけ文字を出す
       clearTimeout(mailTimer);
-      mailTimer = setTimeout(function () { label.innerHTML = bi(S.profile.labels.email); }, 4000);
+      mailTimer = setTimeout(reset, 4000);
     });
   });
 
@@ -268,6 +292,7 @@
     updateThemeUI();
     try { var u = new URL(location.href); if (u.searchParams.get('lang') && u.searchParams.get('lang') !== l) { u.searchParams.set('lang', l); history.replaceState(null, '', u); } } catch (e) {}
     setActive();
+    setTimeout(fitSidebar, 0);           // 言語でサイドバーの高さが変わる（文言の差し替えが済んでから測る）
   }
   var fromQuery = new URLSearchParams(location.search).get('lang');
   var stored = null; try { stored = localStorage.getItem('site-lang'); } catch (e) {}
