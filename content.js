@@ -72,7 +72,8 @@ window.SITE = {
     /* 外部アカウント */
     profiles: [
       { label: 'ORCID',  url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
-      { label: 'GitHub', url: 'https://github.com/TristanFuchs1024' }
+      { label: 'GitHub', url: 'https://github.com/TristanFuchs1024' },
+      { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
     ],
     updated: { en: 'Last updated: September 2026', ja: '最終更新：2026年9月' }
   },
@@ -106,6 +107,13 @@ window.SITE = {
           /* 国際会議: 題目・著者・会場はすべて英語（日本語ページでも英語のまま） */
           title: { en: 'International', ja: '国際会議' },
           items: [
+            {
+              id: 'pres-iqms2026',
+              when: { en: 'Nov–Dec 2026', ja: '2026年11–12月' },
+              title: 'Microscopic Calculation of Characteristic Length Scales in Multi-Band Superconductors',
+              badges: [POSTER, UPCOMING],
+              meta: AUTHORS_EN + ' — International Quantum Materials Symposium (i‑QMS 2026), Phoenix Island Resort, Jeju, Korea'
+            },
             {
               id: 'pres-sces2026',
               when: { en: 'Sep 2026', ja: '2026年9月' },
