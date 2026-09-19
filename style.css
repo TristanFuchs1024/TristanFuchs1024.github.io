@@ -101,6 +101,10 @@ img{max-width:100%}
 .pill:hover{text-decoration:none; transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15)}
 button.pill{border:0; margin:0; font-family:inherit; cursor:pointer; -webkit-appearance:none; appearance:none}
 .pill svg{width:15px; height:15px; fill:currentColor}
+/* アイコンだけのピル（プロフィール）。左右の余白を詰めて、文字のピルと同じ高さの正円にする。
+   vertical-align は、文字が無いピルの下に行の余白が入って列が高くなるのを防ぐためのもの */
+.pills.icons .pill{padding-left:.38rem; padding-right:.38rem; vertical-align:top}
+.pill svg.ico{width:1.2em; height:1.2em; fill:currentColor; display:block}
 .pill.primary{background:var(--orange-solid); color:#fff !important}
 
 .nav ul{list-style:none; margin:0; padding:0}
@@ -216,6 +220,7 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   .linkgroups > div:not(.topctl), .linkgroups .pills{display:contents}
   .linkgroups li{flex:none}
   .pill{font-size:.82rem; padding:.34rem .75rem}
+  .pills.icons .pill{padding-left:.34rem; padding-right:.34rem}
   .sidebar .foot{display:none}
   .site-foot .foot-updated{display:block; margin-top:.25rem}
   /* --- sticky section bar with theme / language switches --- */
@@ -251,8 +256,9 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   .sidebar{position:static; width:auto; height:auto; background:none; color:var(--ink); border-bottom:3px solid var(--rule); padding:0 0 1rem}
   .sidebar a{color:var(--ink)} .nav, .topctl, .mobilebar, #totop{display:none} .main{padding:1rem 0}
   .pill{background:none; color:var(--ink) !important; padding:0; box-shadow:none}
-  .pill svg{display:none}
+  .pill svg, .pill svg.ico{display:none}
   #mail::after{content:" " attr(title)}
   .pill[href^="http"]::after{content:" " attr(href); font-weight:400}
+  .pills.icons .pill::after{content:attr(title)}   /* アイコンだけのピルは名前を印刷する */
   .pub{background:none; border:1px solid var(--rule)}
 }
