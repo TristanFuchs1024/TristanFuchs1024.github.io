@@ -218,8 +218,9 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   .who .field{margin:.4rem 0 0; font-size:.84rem; font-weight:700; color:#3F8070; opacity:1}
   .side-label{display:none}
   .sidebar .topctl, .sidebar .nav{display:none}
-  .linkgroups{flex-direction:row; flex-wrap:nowrap; gap:.4rem; overflow-x:auto; padding-bottom:.15rem; scrollbar-width:none;
+  .linkgroups{flex-direction:row; flex-wrap:nowrap; gap:.4rem; overflow-x:auto; padding:.25rem 0 1.1rem; margin:-.25rem 0 -.95rem; scrollbar-width:none;
     -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 28px), transparent); mask-image:linear-gradient(to right, #000 calc(100% - 28px), transparent)}
+  .linkgroups::after{content:""; flex:none; width:1.75rem}
   .linkgroups::-webkit-scrollbar{display:none}
   .linkgroups > div:not(.topctl), .linkgroups .pills{display:contents}
   .linkgroups li{flex:none}
@@ -230,7 +231,7 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   /* --- sticky section bar with theme / language switches --- */
   .mobilebar{display:flex; align-items:center; gap:.5rem; position:sticky; top:0; z-index:40; background:var(--panel); padding:.45rem 1.1rem; box-shadow:0 2px 10px rgba(0,0,0,.14)}
   .mobilebar .nav{flex:1; min-width:0}
-  .mobilebar .nav ul{display:flex; gap:.35rem; overflow-x:auto; padding:0 1.2rem 0 0; margin:0; list-style:none; scrollbar-width:none; -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 1.6rem), transparent); mask-image:linear-gradient(to right, #000 calc(100% - 1.6rem), transparent)}
+  .mobilebar .nav ul{display:flex; gap:.35rem; overflow-x:auto; padding:0 1.75rem 0 0; margin:0; list-style:none; scrollbar-width:none; -webkit-mask-image:linear-gradient(to right, #000 calc(100% - 1.6rem), transparent); mask-image:linear-gradient(to right, #000 calc(100% - 1.6rem), transparent)}
   .mobilebar .nav ul::-webkit-scrollbar{display:none}
   .mobilebar .nav li a{display:block; color:#fff; padding:.28rem .7rem; border:1.5px solid rgba(255,255,255,.7); border-radius:999px; white-space:nowrap; font-size:.84rem; font-weight:500; opacity:.9; text-decoration:none}
   .mobilebar .nav li a::before{display:none}
