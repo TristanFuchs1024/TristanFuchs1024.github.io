@@ -65,14 +65,14 @@ window.SITE = {
       contact:  { en: 'Contact',  ja: '連絡先' },
       email:    { en: 'Email',    ja: 'メール' },
       copied:   { en: 'Copied!',  ja: 'コピー済み' },     // 「履歴書 (PDF)」が次の行に落ちない長さにしておく
-      cv:       { en: 'CV',       ja: '履歴書' },         // 後ろの「 (PDF)」は app.js が足す（スマホでは隠れる）
+      cv:       { en: 'CV (PDF)', ja: '履歴書 (PDF)' },
       profiles: { en: 'Profiles', ja: 'アカウント' },
       sections: { en: 'Sections', ja: '目次' }
     },
     /* 外部アカウント。icon はアイコンの種類（app.js の ICONS のキー） */
     profiles: [
-      { label: 'ORCID',          icon: 'orcid',   url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
       { label: 'GitHub',         icon: 'github',  url: 'https://github.com/TristanFuchs1024' },
+      { label: 'ORCID',          icon: 'orcid',   url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
       { label: 'Google Scholar', icon: 'scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
     ],
     updated: { en: 'Last updated: September 2026', ja: '最終更新：2026年9月' }
