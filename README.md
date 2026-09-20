@@ -78,7 +78,7 @@ google8042e5ad13679fbd.html  Google Search Console の所有権確認用。中�
   `--panel` はサイドバーなど広い面で、ダークモードでは濃ティール #2F6A5C になる（暗い本文の隣で眩しくならないように）。
   `--orange` は文字色用でダークモードでは明るくなるため、白文字を乗せる塗りには `--orange-solid` を使う。
 - 自己紹介カードと白いボタンはダークモードでも白のまま（ブランドの見た目を保つため）。
-- ライトモードの見た目は、太陽／月の切り替えボタンが増えたこと以外はダークモード対応前と変わらない（ボタン以外は全画素一致を確認済み）。
+- ライトモードの見た目は、切り替えボタンが増えた以外は変えていない。
 - 印刷（PDF保存）は、ダークモードを選んでいても常にライトの配色になる。
 
 ## 日英切り替えの仕組み
@@ -117,11 +117,9 @@ python -m http.server 8123
 ## 公開先と更新のしかた（GitHub Pages）
 
 - 公開URL: https://tristanfuchs1024.github.io/ （リポジトリ `TristanFuchs1024/TristanFuchs1024.github.io`、`main` ブランチ直下を配信）
-- 作業用のクローンは `C:\Users\Tristan\Desktop\TristanFuchs1024.github.io` にある。ここで編集して commit し、`git push` すれば
-  1分ほどで公開に反映される。
+- 作業用のクローンで編集して commit し、`git push` すれば1分ほどで公開に反映される。
 
 ```bash
-cd C:/Users/Tristan/Desktop/TristanFuchs1024.github.io
 git add -A
 git commit -m "内容の更新"
 git push
