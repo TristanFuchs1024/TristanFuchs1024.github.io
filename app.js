@@ -126,12 +126,11 @@
          '<svg class="ico-mail" viewBox="0 0 24 24"><path d="M2 5h20v14H2z M4 7v.5l8 5 8-5V7H4z M4 9.8V17h16V9.8l-8 5z"/></svg>' +
          '<svg class="ico-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.3 4.2 12l1.5-1.5 3.8 3.8 8.8-8.8 1.5 1.5z"/></svg>' +
          '<span class="mail-label">' + bi(L.email) + '</span></button></li>';
-    // 「 (PDF)」はスマホでは隠すので、文言（content.js）と分けてここで足す
-    h += '<li><a class="pill primary" href="' + attr(P.cv) + '" target="_blank" rel="noopener">' + bi(L.cv) + '<span class="pdf"> (PDF)</span></a></li>';
+    h += '<li><a class="pill primary" href="' + attr(P.cv) + '" target="_blank" rel="noopener">' + bi(L.cv) + '</a></li>';
     h += '</ul></div>';
     h += '<div><p class="side-label">' + bi(L.profiles) + '</p><ul class="pills icons">';
     P.profiles.forEach(function (a) {
-      var ico = ICONS[a.icon];   // アイコンがあるものはアイコン＋名前（スマホでは名前を隠して丸く）、無いものは従来どおり文字
+      var ico = ICONS[a.icon];   // アイコンがあるものはアイコン＋名前（スマホでは名前だけ）、無いものは従来どおり文字
       h += '<li><a class="pill" href="' + attr(a.url) + '" target="_blank" rel="noopener"';
       if (typeof ico === 'string') {
         h += ' title="' + attr(a.title || a.label) + '" aria-label="' + attr(a.label) + '">' +

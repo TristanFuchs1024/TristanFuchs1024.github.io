@@ -109,8 +109,6 @@ button.pill{border:0; margin:0; font-family:inherit; cursor:pointer; -webkit-app
 .pill svg.ico-check{display:none}                    /* コピー完了の印。下の is-copied のときだけ出す */
 #mail.is-copied .ico-mail{display:none}
 #mail.is-copied .ico-check{display:block}
-/* CVピルの「 (PDF)」。負の margin は inline-flex の gap を打ち消すため（白文字のピル幅を従来どおりに保つ） */
-.pill .pdf{margin-left:-.35rem; white-space:pre}
 .pill.primary{background:var(--orange-solid); color:#fff !important}
 
 .nav ul{list-style:none; margin:0; padding:0}
@@ -226,12 +224,7 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   .linkgroups > div:not(.topctl), .linkgroups .pills{display:contents}
   .linkgroups li{flex:none}
   .pill{font-size:.82rem; padding:.34rem .75rem}
-  /* メールとアカウントはアイコンだけの丸に、CVは「 (PDF)」を省く。アイコンを 1.2em にすると文字のピルと同じ高さの正円になる */
-  .pills.icons .pill{padding-left:.34rem; padding-right:.34rem}
-  #mail{padding-left:.34rem; padding-right:.34rem}
-  #mail .mail-label, .pills.icons .lbl, .pill .pdf{display:none}
-  #mail.is-fallback .mail-label{display:inline}   /* コピーできなかったときはアドレスを出す */
-  #mail svg, .pills.icons .pill svg{width:1.2em; height:1.2em}
+  .pills.icons .pill svg.ico{display:none}   /* スマホではアカウントは名前だけ */
   .sidebar .foot{display:none}
   .site-foot .foot-updated{display:block; margin-top:.25rem}
   /* --- sticky section bar with theme / language switches --- */
@@ -269,8 +262,6 @@ footer.site-foot{border-top:3px solid var(--rule); padding-top:1.25rem; color:va
   .pill{background:none; color:var(--ink) !important; padding:0; box-shadow:none}
   .pill svg, .pill svg.ico{display:none}
   /* 紙の幅は900px以下なのでスマホ用の指定も掛かる。隠した名前・「 (PDF)」は印刷では出し直し、ボタン列は折り返す */
-  #mail .mail-label, .pills.icons .lbl, .pill .pdf{display:inline}
-  #mail, .pills.icons .pill{padding:0}
   .linkgroups{flex-wrap:wrap; overflow:visible; -webkit-mask-image:none; mask-image:none}
   #mail::after{content:" " attr(title)}
   .pill[href^="http"]::after{content:" " attr(href); font-weight:400}
