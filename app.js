@@ -245,12 +245,21 @@
     var o = document.documentElement.getAttribute('data-theme');
     return (o === 'dark' || o === 'light') ? o : systemTheme();
   }
+  var favicon = document.querySelector('link[rel="icon"]');
+  function faviconFor(color) {   // タブのアイコン。地の色はサイドバーと同じ色にする
+    return 'data:image/svg+xml,' + encodeURIComponent(
+      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>" +
+      "<rect width='64' height='64' rx='12' fill='" + color + "'/>" +
+      "<text x='32' y='48' text-anchor='middle' textLength='58' lengthAdjust='spacingAndGlyphs' " +
+      "font-family='Arial,Helvetica,sans-serif' font-size='46' font-weight='700' fill='white'>TRF</text></svg>");
+  }
   function updateThemeUI() {
     var eff = currentTheme();
     var A = S.aria[document.documentElement.getAttribute('data-lang') === 'ja' ? 'ja' : 'en'];
     var label = eff === 'dark' ? A.toLight : A.toDark;
     themeButtons.forEach(function (b) { b.setAttribute('data-effective', eff); b.setAttribute('aria-label', label); b.title = label; });
     var panel = getComputedStyle(document.documentElement).getPropertyValue('--panel').trim();
+    if (favicon && panel) favicon.href = faviconFor(panel);
     Array.prototype.forEach.call(document.querySelectorAll('meta[name="theme-color"]'), function (m) {
       if (!m.dataset.orig) m.dataset.orig = m.content;
       m.content = document.documentElement.hasAttribute('data-theme') && panel ? panel : m.dataset.orig;
