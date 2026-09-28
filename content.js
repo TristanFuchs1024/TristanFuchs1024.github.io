@@ -125,7 +125,7 @@ window.SITE = {
               id: 'pres-asymmetry2026',
               when: { en: 'Sep 2026', ja: '2026年9月' },
               title: 'Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors',
-              badges: [POSTER, UPCOMING],
+              badges: [POSTER],
               meta: AUTHORS_EN + ' — International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Osaka University Hall, Toyonaka, Osaka, Japan'
             },
             {
