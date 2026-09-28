@@ -316,4 +316,36 @@
   window.addEventListener('scroll', toggleTop, { passive: true });
   toggleTop();
   top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  /* ---------- 同梱の書体に無い文字がページにあるときだけ、その文字の分を Google Fonts から読む ---------- */
+  (function () {
+    if (!document.fonts || !document.fonts.forEach) return;
+    var ranges = [];
+    document.fonts.forEach(function (f) {
+      if (f.family.replace(/["']/g, '') !== 'Noto Sans JP Subset') return;
+      f.unicodeRange.split(',').forEach(function (r) {
+        var m = /U\+([0-9A-F]+)(?:-([0-9A-F]+))?/i.exec(r);
+        if (m) ranges.push([parseInt(m[1], 16), parseInt(m[2] || m[1], 16)]);
+      });
+    });
+    if (!ranges.length) return;
+    var text = document.body.textContent + document.title + JSON.stringify(S), miss = {};
+    for (var i = 0; i < text.length; i++) {
+      var c = text.charCodeAt(i), n = 1;
+      if (c < 0x80) continue;
+      if (c >= 0xD800 && c <= 0xDBFF && i + 1 < text.length) { c = 0x10000 + ((c - 0xD800) << 10) + (text.charCodeAt(i + 1) - 0xDC00); n = 2; }
+      else if (c >= 0xD800 && c <= 0xDFFF) continue;
+      var hit = false;
+      for (var j = 0; j < ranges.length && !hit; j++) hit = c >= ranges[j][0] && c <= ranges[j][1];
+      if (!hit) miss[text.slice(i, i + n)] = 1;
+      i += n - 1;
+    }
+    var chars = Object.keys(miss).join('');
+    if (!chars) return;
+    var l = document.createElement('link');
+    l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..900&display=swap'
+           + (chars.length <= 200 ? '&text=' + encodeURIComponent(chars) : '');
+    document.head.appendChild(l);
+  })();
 })();
