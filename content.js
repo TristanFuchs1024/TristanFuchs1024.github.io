@@ -20,6 +20,7 @@ var POSTER   = { kind: 'type',   text: { en: 'Poster',            ja: 'ポスタ
 var ORAL     = { kind: 'type',   text: { en: 'Oral',              ja: '口頭' } };
 var UPCOMING = { kind: 'plan',   text: { en: 'Upcoming',          ja: '発表予定' } };
 var BEST_POSTER = { kind: 'status', text: { en: 'Best Poster Award', ja: '優秀ポスター賞' } };
+var BEST_PRESENTATION = { kind: 'status', text: { en: 'Best Presentation Award', ja: '優秀発表賞' } };
 
 window.SITE = {
 
@@ -164,7 +165,7 @@ window.SITE = {
               id: 'pres-merit-camp',
               when: { en: 'Sep 2026', ja: '2026年9月' },
               title: '多バンド超伝導体における長さスケールの拡張GL法に基づく微視的計算',
-              badges: [POSTER, BEST_POSTER],
+              badges: [POSTER, BEST_PRESENTATION],
               meta: AUTHORS_JA + ' — MERITキャンプ2026（いこいの村ヘリテイジ美の山、埼玉県皆野町）'
             },
             {
@@ -214,7 +215,7 @@ window.SITE = {
         {
           id: 'award-merit-camp',
           when: { en: 'Sep 2026', ja: '2026年9月' },
-          title: { en: 'Best Poster Award', ja: '優秀ポスター賞' },
+          title: { en: 'Best Presentation Award', ja: '優秀発表賞' },
           meta: '<a href="#pres-merit-camp">MERITキャンプ2026</a>'
         },
         {
