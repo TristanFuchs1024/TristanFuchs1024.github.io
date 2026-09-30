@@ -122,6 +122,13 @@ window.SITE = {
               meta: AUTHORS_EN + ' — International Workshop on Frontiers in Ab-initio Many-Body Interactions (FAMBI 2026), Institute for Materials Research, Tohoku University, Sendai, Japan'
             },
             {
+              id: 'pres-sces2026',
+              when: { en: 'Sep 2026', ja: '2026年9月' },
+              title: 'Microscopic Calculation of Characteristic Length Scales in Multi-band Superconductors',
+              badges: [POSTER],
+              meta: AUTHORS_EN + ' — International Conference on Strongly Correlated Electron Systems (SCES 2026), Toyama International Conference Center, Toyama, Japan'
+            },
+            {
               id: 'pres-asymmetry2026',
               when: { en: 'Sep 2026', ja: '2026年9月' },
               title: 'Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors',
