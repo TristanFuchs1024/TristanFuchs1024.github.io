@@ -115,11 +115,11 @@ window.SITE = {
               meta: AUTHORS_EN + ' — International Quantum Materials Symposium (i‑QMS 2026), Phoenix Island Resort, Jeju, Korea'
             },
             {
-              id: 'pres-sces2026',
-              when: { en: 'Sep 2026', ja: '2026年9月' },
-              title: 'Microscopic Calculation of Characteristic Length Scales in Multi-band Superconductors',
+              id: 'pres-fambi2026',
+              when: { en: 'Nov 2026', ja: '2026年11月' },
+              title: 'Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors from Microscopic Calculations',
               badges: [POSTER, UPCOMING],
-              meta: AUTHORS_EN + ' — International Conference on Strongly Correlated Electron Systems (SCES 2026), Toyama International Conference Center, Toyama, Japan'
+              meta: AUTHORS_EN + ' — International Workshop on Frontiers in Ab-initio Many-Body Interactions (FAMBI 2026), Institute for Materials Research, Tohoku University, Sendai, Japan'
             },
             {
               id: 'pres-asymmetry2026',
