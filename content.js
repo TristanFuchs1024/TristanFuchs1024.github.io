@@ -76,7 +76,7 @@ window.SITE = {
       { label: 'ORCID',          icon: 'orcid',   url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
       { label: 'Google Scholar', icon: 'scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
     ],
-    updated: { en: 'Last updated: September 2026', ja: '最終更新：2026年9月' }
+    updated: { en: 'Last updated: October 2026', ja: '最終更新：2026年10月' }
   },
 
   /* ---------- 本文の各セクション（この順番で表示され、目次もこの順） ---------- */
@@ -116,6 +116,13 @@ window.SITE = {
               meta: AUTHORS_EN + ' — International Quantum Materials Symposium (i‑QMS 2026), Phoenix Island Resort, Jeju, Korea'
             },
             {
+              id: 'pres-cdsquast2026',
+              when: { en: 'Nov 2026', ja: '2026年11月' },
+              title: 'Development of Microscopic Methods for Calculating Characteristic Length Scales in Multiband Superconductors',
+              badges: [POSTER, UPCOMING],
+              meta: AUTHORS_EN + ' — CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo, Tokyo, Japan'
+            },
+            {
               id: 'pres-fambi2026',
               when: { en: 'Nov 2026', ja: '2026年11月' },
               title: 'Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors from Microscopic Calculations',
@@ -123,9 +130,16 @@ window.SITE = {
               meta: AUTHORS_EN + ' — International Workshop on Frontiers in Ab-initio Many-Body Interactions (FAMBI 2026), Institute for Materials Research, Tohoku University, Sendai, Japan'
             },
             {
+              id: 'pres-asian27',
+              when: { en: 'Nov 2026', ja: '2026年11月' },
+              title: 'Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors Based on Microscopic Calculations',
+              badges: [POSTER, UPCOMING],
+              meta: AUTHORS_EN + ' — 27th Asian Workshop on First-Principles Electronic Structure Calculations (ASIAN-27), National Sun Yat-sen University, Kaohsiung, Taiwan'
+            },
+            {
               id: 'pres-sces2026',
               when: { en: 'Sep 2026', ja: '2026年9月' },
-              title: 'Microscopic Calculation of Characteristic Length Scales in Multi-band Superconductors',
+              title: 'Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band Superconductors',
               badges: [POSTER],
               meta: AUTHORS_EN + ' — International Conference on Strongly Correlated Electron Systems (SCES 2026), Toyama International Conference Center, Toyama, Japan'
             },
@@ -199,7 +213,14 @@ window.SITE = {
               when: { en: 'Mar 2026', ja: '2026年3月' },
               title: '2バンド超伝導体におけるコヒーレンス長および磁場侵入長の微視的計算',
               badges: [POSTER, BEST_POSTER],
-              meta: AUTHORS_JA + ' — 計算物理春の学校2026（沖縄）'
+              meta: AUTHORS_JA + ' — 計算物理春の学校2026（沖縄県那覇市）'
+            },
+            {
+              id: 'pres-merit-colloquium',
+              when: { en: 'Jan 2026', ja: '2026年1月' },
+              title: 'コヒーレンス長と磁場侵入長の微視的計算',
+              badges: [ORAL],
+              meta: AUTHORS_JA + ' — 第15期MERITコロキウム（東京大学）'
             }
           ]
         }
