@@ -214,13 +214,6 @@ window.SITE = {
               title: '2バンド超伝導体におけるコヒーレンス長および磁場侵入長の微視的計算',
               badges: [POSTER, BEST_POSTER],
               meta: AUTHORS_JA + ' — 計算物理春の学校2026（沖縄県那覇市）'
-            },
-            {
-              id: 'pres-merit-colloquium',
-              when: { en: 'Jan 2026', ja: '2026年1月' },
-              title: 'コヒーレンス長と磁場侵入長の微視的計算',
-              badges: [ORAL],
-              meta: AUTHORS_JA + ' — 第15期MERITコロキウム（東京大学）'
             }
           ]
         }
