@@ -76,7 +76,7 @@ window.SITE = {
       { label: 'ORCID',          icon: 'orcid',   url: 'https://orcid.org/0009-0008-1109-7449', title: 'ORCID iD 0009-0008-1109-7449' },
       { label: 'Google Scholar', icon: 'scholar', url: 'https://scholar.google.com/citations?user=8yZOrnUAAAAJ' }
     ],
-    updated: { en: 'Last updated: October 2026', ja: '最終更新：2026年10月' }
+    updated: { en: 'Last updated: November 2026', ja: '最終更新：2026年11月' }
   },
 
   /* ---------- 本文の各セクション（この順番で表示され、目次もこの順） ---------- */
@@ -133,7 +133,7 @@ window.SITE = {
               id: 'pres-asian27',
               when: { en: 'Nov 2026', ja: '2026年11月' },
               title: 'Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors Based on Microscopic Calculations',
-              badges: [POSTER, UPCOMING],
+              badges: [POSTER],
               meta: AUTHORS_EN + ' — 27th Asian Workshop on First-Principles Electronic Structure Calculations (ASIAN-27), National Sun Yat-sen University, Kaohsiung, Taiwan'
             },
             {
