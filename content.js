@@ -169,6 +169,13 @@ window.SITE = {
           title: { en: 'Domestic', ja: '国内会議' },
           items: [
             {
+              id: 'pres-cds2026',
+              when: { en: 'Dec 2026', ja: '2026年12月' },
+              title: 'コヒーレンス長と磁場侵入長の微視的計算手法の開発と応用',
+              badges: [POSTER, UPCOMING],
+              meta: AUTHORS_JA + ' — 学術変革領域研究(A)「相関設計で挑む量子創発」2026年領域会議（東京大学 本郷キャンパス 武田ホール）'
+            },
+            {
               id: 'pres-jps2026a',
               when: { en: 'Sep 2026', ja: '2026年9月' },
               title: '実空間BdG法に基づくコヒーレンス長と磁場侵入長の計算',
