@@ -6,16 +6,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400&display=swap" rel="stylesheet">
 <style>
   /* ---- CV の見た目。サイトと同じ配色（濃ティール #3F8070 / ティール #3AB0A2）と書体 ---- */
-  @page { size: A4; margin: 13mm 15mm 14mm 15mm; }
-  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3; }
+  @page { size: A4; margin: 12mm 15mm 12mm 15mm; }
+  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3;
+         /* 余白のつまみ（行間・項目の上下・見出しの上）。内容を増減したらここで 2 ページに合わせる */
+         --lh:1.35; --gap:.85mm; --sec:3.8mm; --sub:2.4mm; }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
+  /* 1ページ = .page 1つ。本文領域いっぱいの高さにして、余った分はブロックの間へ均等に配る（下端まで使い切る） */
+  .page{ min-height:272.6mm; display:flex; flex-direction:column; justify-content:space-between; }
+  .page + .page{ break-before:page; }
+  .page > :first-child{ margin-top:0; }
+  .page:first-child{ --gap:1.05mm; --sec:4.6mm; }   /* 1ページ目は余りが多いので広め */
   body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
-        font-size:9.3pt; line-height:1.32; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+        font-size:9.3pt; line-height:var(--lh); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   a{ color:var(--link); text-decoration:none; }
 
   /* header */
-  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:2.6mm; border-bottom:2.5pt solid var(--teal); margin-bottom:3.5mm; }
+  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:3.4mm; border-bottom:2.5pt solid var(--teal); margin-bottom:.7mm; }
   h1{ font-size:20pt; font-weight:900; margin:0; letter-spacing:-.01em; line-height:1.15; }
   .name-ja{ font-size:10.5pt; font-weight:500; color:var(--ink-soft); margin:1mm 0 0; }
   .role{ margin:2.2mm 0 0; font-size:10.2pt; color:var(--ink-soft); line-height:1.4; }
@@ -25,10 +32,11 @@
   .contact b{ color:var(--ink); font-weight:700; }
 
   /* sections */
-  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:2.8mm 0 1.2mm; padding-bottom:.6mm; border-bottom:1pt solid var(--rule);
+  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:var(--sec) 0 1.5mm; padding-bottom:.7mm; border-bottom:1pt solid var(--rule);
       letter-spacing:.02em; text-transform:uppercase; page-break-after:avoid; }
-  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:1.8mm 0 .7mm; page-break-after:avoid; }
-  .entry{ display:grid; grid-template-columns:29mm 1fr; column-gap:3.5mm; padding:.5mm 0; page-break-inside:avoid; }
+  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:var(--sub) 0 .9mm; page-break-after:avoid; }
+  h2 + h3{ margin-top:.6mm; }
+  .entry{ display:grid; grid-template-columns:29mm 1fr; column-gap:3.5mm; padding:var(--gap) 0; page-break-inside:avoid; }
   .cols .entry{ grid-template-columns:11mm 1fr; column-gap:3mm; }
   .entry .when{ color:var(--muted); font-size:8.7pt; padding-top:.4mm; white-space:nowrap; }
   .entry .title{ font-weight:700; margin:0; }
@@ -43,13 +51,15 @@
   .nowrap{ white-space:nowrap; }
   .me{ font-weight:700; text-decoration:underline; text-decoration-color:var(--teal); text-decoration-thickness:1pt; text-underline-offset:1pt; }
   ol.pubs{ margin:0; padding-left:5.5mm; }
-  ol.pubs li{ margin:0 0 1mm; }
-  .plain{ margin:0 0 1mm; }
-  .cols{ display:grid; grid-template-columns:1.15fr 1fr; column-gap:8mm; page-break-inside:avoid; }
+  ol.pubs li{ margin:0; }
+  ol.pubs li + li{ margin-top:1mm; }
+  .plain{ margin:0 0 calc(var(--gap) * 2); }
+  .cols{ display:grid; grid-template-columns:1.4fr 1fr; column-gap:8mm; page-break-inside:avoid; }
   .footer{ margin-top:2mm; font-size:8.5pt; color:var(--muted); text-align:right; }
 </style>
 </head>
 <body>
+<div class="page">
 
 <header>
   <div>
@@ -119,6 +129,9 @@
   <p class="meta">CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo (Nov 2026, scheduled) · International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Toyonaka (Sep 2026) · CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako (Feb 2026)</p>
 </div></div>
 
+</div>
+
+<div class="page">
 <h3>Domestic Conferences (Japan)</h3>
 <div class="entry"><div class="when">Sep 2026</div><div>
   <p class="title">Calculation of Coherence Lengths and Magnetic Penetration Depth Based on the Real-Space Bogoliubov–de Gennes Method <span class="tag type">Poster</span></p>
@@ -166,11 +179,11 @@
 <div class="cols">
   <div>
     <h2>Certifications and Test Scores</h2>
-    <div class="entry"><div class="when">2026</div><div><p class="title">EIKEN Grade 1</p><p class="meta" lang="ja">実用英語技能検定（英検）1級</p></div></div>
-    <div class="entry"><div class="when">2025</div><div><p class="title">Applied Information Technology Engineer Examination</p><p class="meta" lang="ja">応用情報技術者試験</p></div></div>
+    <div class="entry"><div class="when">2026</div><div><p class="title">EIKEN Grade 1 <span class="meta-inline">— <span lang="ja">実用英語技能検定（英検）1級</span></span></p></div></div>
+    <div class="entry"><div class="when">2025</div><div><p class="title">Applied Information Technology Engineer Examination <span class="meta-inline">— <span lang="ja">応用情報技術者試験</span></span></p></div></div>
     <div class="entry"><div class="when">2024</div><div><p class="title">TOEFL iBT 105</p></div></div>
     <div class="entry"><div class="when">2024</div><div><p class="title">TOEIC Listening &amp; Reading 960</p></div></div>
-    <div class="entry"><div class="when">2022</div><div><p class="title">HSK Level 4</p><p class="meta"><span lang="zh-Hans">汉语水平考试</span> (Chinese Proficiency Test)</p></div></div>
+    <div class="entry"><div class="when">2022</div><div><p class="title">HSK Level 4 <span class="meta-inline">— <span lang="zh-Hans">汉语水平考试</span> (Chinese Proficiency Test)</span></p></div></div>
   </div>
   <div>
     <h2>Languages and Skills</h2>
@@ -180,5 +193,6 @@
 </div>
 
 <p class="footer">Last updated: November 2026</p>
+</div>
 </body>
 </html>

@@ -6,16 +6,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* ---- 日本語版 CV。見た目は cv.html と同じ（日付の列が広く、行間が少し広い） ---- */
-  @page { size: A4; margin: 13mm 15mm 14mm 15mm; }
-  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3; }
+  @page { size: A4; margin: 12mm 15mm 12mm 15mm; }
+  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3;
+         /* 余白のつまみ（行間・項目の上下・見出しの上）。内容を増減したらここで 2 ページに合わせる */
+         --lh:1.42; --gap:.7mm; --sec:3.4mm; --sub:2.2mm; }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
+  /* 1ページ = .page 1つ。本文領域いっぱいの高さにして、余った分はブロックの間へ均等に配る（下端まで使い切る） */
+  .page{ min-height:272.6mm; display:flex; flex-direction:column; justify-content:space-between; }
+  .page + .page{ break-before:page; }
+  .page > :first-child{ margin-top:0; }
+  .page:first-child{ --gap:.85mm; --sec:4.4mm; }   /* 1ページ目は余りが多いので広め */
   body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
-        font-size:9.3pt; line-height:1.42; line-break:strict; word-break:auto-phrase; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+        font-size:9.3pt; line-height:var(--lh); line-break:strict; word-break:auto-phrase; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   a{ color:var(--link); text-decoration:none; }
 
   /* header */
-  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:2.6mm; border-bottom:2.5pt solid var(--teal); margin-bottom:3.5mm; }
+  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:3.4mm; border-bottom:2.5pt solid var(--teal); margin-bottom:.7mm; }
   h1{ font-size:20pt; font-weight:900; margin:0; letter-spacing:.01em; line-height:1.15; }
   .name-sub{ font-size:10.5pt; font-weight:500; color:var(--ink-soft); margin:1mm 0 0; }
   .role{ margin:2.2mm 0 0; font-size:10.2pt; color:var(--ink-soft); line-height:1.45; }
@@ -25,10 +32,11 @@
   .contact b{ color:var(--ink); font-weight:700; }
 
   /* sections */
-  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:2.8mm 0 1.2mm; padding-bottom:.6mm; border-bottom:1pt solid var(--rule);
+  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:var(--sec) 0 1.5mm; padding-bottom:.7mm; border-bottom:1pt solid var(--rule);
       letter-spacing:.06em; page-break-after:avoid; }
-  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:1.8mm 0 .7mm; page-break-after:avoid; }
-  .entry{ display:grid; grid-template-columns:36mm 1fr; column-gap:3.5mm; padding:.5mm 0; page-break-inside:avoid; }
+  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:var(--sub) 0 .9mm; page-break-after:avoid; }
+  h2 + h3{ margin-top:.6mm; }
+  .entry{ display:grid; grid-template-columns:36mm 1fr; column-gap:3.5mm; padding:var(--gap) 0; page-break-inside:avoid; }
   .cols .entry{ grid-template-columns:12.5mm 1fr; column-gap:3mm; }
   .entry .when{ color:var(--muted); font-size:8.7pt; padding-top:.4mm; white-space:nowrap; }
   .entry .title{ font-weight:700; margin:0; }
@@ -45,13 +53,15 @@
   .me:lang(ja){ text-underline-offset:2.2pt; }
   .zh{ font-family:"Noto Sans SC","Noto Sans JP",sans-serif; }
   ol.pubs{ margin:0; padding-left:5.5mm; }
-  ol.pubs li{ margin:0 0 1mm; }
-  .plain{ margin:0 0 1mm; }
+  ol.pubs li{ margin:0; }
+  ol.pubs li + li{ margin-top:1mm; }
+  .plain{ margin:0 0 calc(var(--gap) * 2); }
   .cols{ display:grid; grid-template-columns:1fr 1.25fr; column-gap:8mm; page-break-inside:avoid; }
   .footer{ margin-top:2mm; font-size:8.5pt; color:var(--muted); text-align:right; }
 </style>
 </head>
 <body>
+<div class="page">
 
 <header>
   <div>
@@ -121,6 +131,9 @@
   <p class="meta"><span lang="en">CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo</span>（2026年11月、発表予定）· <span lang="en">International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Toyonaka</span>（2026年9月）· <span lang="en">CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako</span>（2026年2月）</p>
 </div></div>
 
+</div>
+
+<div class="page">
 <h3>国内会議</h3>
 <div class="entry"><div class="when">2026年9月</div><div>
   <p class="title">実空間BdG法に基づくコヒーレンス長と磁場侵入長の<span class="nowrap">計算 <span class="tag type">ポスター</span></span></p>
@@ -191,5 +204,6 @@
 </div>
 
 <p class="footer">最終更新：2026年11月</p>
+</div>
 </body>
 </html>
