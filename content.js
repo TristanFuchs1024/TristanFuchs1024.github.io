@@ -93,7 +93,7 @@ window.SITE = {
           authors: ME_EN + ', T. Nomoto, H. Watanabe, and R. Arita',
           title: 'Microscopic calculation of coherence lengths and magnetic penetration depth in multiband superconductors',
           // 掲載後は venue を誌名・巻・ページ（DOI リンク）に書き換え、badge を外す
-          venue: '<a href="https://arxiv.org/abs/2609.06014" target="_blank" rel="noopener">arXiv:2609.06014</a> [cond-mat.supr-con] (2026)',
+          venue: '<a href="https://arxiv.org/abs/2609.06014" target="_blank" rel="noopener">arXiv:2609.06014</a> (2026)',
           badge: { kind: 'status', text: { en: 'Under review', ja: '査読中' } }
         }
       ]
