@@ -380,7 +380,7 @@ window.SITE = {
       type: 'entries',
       items: [
         { when: { en: '2026', ja: '2026年' }, title: { en: 'EIKEN Grade 1 (実用英語技能検定 1級)', ja: '実用英語技能検定（英検）1級' } },
-        { when: { en: '2025', ja: '2025年' }, title: { en: 'Applied Information Technology Engineer Examination (応用情報技術者試験) — passed', ja: '応用情報技術者試験 合格' } },
+        { when: { en: '2025', ja: '2025年' }, title: { en: 'Applied Information Technology Engineer Examination (応用情報技術者試験)', ja: '応用情報技術者試験' } },
         { when: { en: '2024', ja: '2024年' }, title: 'TOEFL iBT 105' },
         { when: { en: '2024', ja: '2024年' }, title: 'TOEIC Listening &amp; Reading 960' },
         { when: { en: '2022', ja: '2022年' }, title: { en: 'HSK Level 4 (Chinese Proficiency Test, 汉语水平考试)', ja: 'HSK（汉语水平考试）4級' } }
