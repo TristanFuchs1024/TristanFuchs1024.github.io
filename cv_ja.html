@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>フックストリスタン龍馬 — 履歴書</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ---- 日本語版 CV。見た目は cv.html と同じ（日付の列が広く、行間が少し広い） ---- */
+  @page { size: A4; margin: 13mm 15mm 14mm 15mm; }
+  :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
+        font-size:9.3pt; line-height:1.42; line-break:strict; word-break:auto-phrase; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  a{ color:var(--link); text-decoration:none; }
+
+  /* header */
+  header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:2.6mm; border-bottom:2.5pt solid var(--teal); margin-bottom:3.5mm; }
+  h1{ font-size:20pt; font-weight:900; margin:0; letter-spacing:.01em; line-height:1.15; }
+  .name-sub{ font-size:10.5pt; font-weight:500; color:var(--ink-soft); margin:1mm 0 0; }
+  .role{ margin:2.2mm 0 0; font-size:10.2pt; color:var(--ink-soft); line-height:1.45; }
+  .contact{ display:grid; grid-template-columns:auto auto; column-gap:2.2mm; row-gap:.2mm; align-content:end; font-size:9pt; color:var(--ink-soft); line-height:1.55; white-space:nowrap; }
+  .contact .k{ text-align:left; }
+  .contact .v{ text-align:right; }
+  .contact b{ color:var(--ink); font-weight:700; }
+
+  /* sections */
+  h2{ font-size:10.8pt; font-weight:900; color:var(--teal-dark); margin:2.8mm 0 1.2mm; padding-bottom:.6mm; border-bottom:1pt solid var(--rule);
+      letter-spacing:.06em; page-break-after:avoid; }
+  h3{ font-size:9.5pt; font-weight:700; color:var(--teal-dark); margin:1.8mm 0 .7mm; page-break-after:avoid; }
+  .entry{ display:grid; grid-template-columns:36mm 1fr; column-gap:3.5mm; padding:.5mm 0; page-break-inside:avoid; }
+  .cols .entry{ grid-template-columns:12.5mm 1fr; column-gap:3mm; }
+  .entry .when{ color:var(--muted); font-size:8.7pt; padding-top:.4mm; white-space:nowrap; }
+  .entry .title{ font-weight:700; margin:0; }
+  .entry .meta{ color:var(--ink-soft); margin:0; }
+  .meta-inline{ color:var(--ink-soft); font-weight:400; }
+  .entry .note{ color:var(--ink-soft); margin:.4mm 0 0; }
+  .tag{ display:inline-block; font-size:7.6pt; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.3mm 1.6mm; border-radius:2pt;
+        line-height:1.32; vertical-align:middle; margin-left:1.2mm; }
+  .tag.type{ background:#EFF7F5; color:var(--teal-dark); }
+  .tag.award{ background:#FBEDE6; color:#C94A18; }
+  .tag.plan{ border:1pt solid var(--muted); color:var(--muted); padding:.1mm 1.4mm; }
+  .nowrap{ white-space:nowrap; }
+  .me{ font-weight:700; text-decoration:underline; text-decoration-color:var(--teal); text-decoration-thickness:1pt; text-underline-offset:1pt; }
+  .me:lang(ja){ text-underline-offset:2.2pt; }
+  .zh{ font-family:"Noto Sans SC","Noto Sans JP",sans-serif; }
+  ol.pubs{ margin:0; padding-left:5.5mm; }
+  ol.pubs li{ margin:0 0 1mm; }
+  .plain{ margin:0 0 1mm; }
+  .cols{ display:grid; grid-template-columns:1fr 1.25fr; column-gap:8mm; page-break-inside:avoid; }
+  .footer{ margin-top:2mm; font-size:8.5pt; color:var(--muted); text-align:right; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>フックストリスタン龍馬</h1>
+    <p class="name-sub" lang="en">Tristan Ryoma Fuchs</p>
+    <p class="role">修士課程2年<br>
+       東京大学大学院 理学系研究科 物理学専攻<br>
+       有田研究室｜MERIT-WINGS コース生</p>
+  </div>
+  <div class="contact">
+    <span class="k">メール</span><span class="v"><a href="mailto:tristan@g.ecc.u-tokyo.ac.jp"><b>tristan@g.ecc.u-tokyo.ac.jp</b></a></span>
+    <span class="k">ウェブサイト</span><span class="v"><a href="https://tristanfuchs1024.github.io/">tristanfuchs1024.github.io</a></span>
+    <span class="k">ORCID</span><span class="v"><a href="https://orcid.org/0009-0008-1109-7449">0009-0008-1109-7449</a></span>
+    <span class="k">GitHub</span><span class="v"><a href="https://github.com/TristanFuchs1024">TristanFuchs1024</a></span>
+    <span class="k">Google Scholar</span><span class="v"><a href="https://scholar.google.com/citations?user=8yZOrnUAAAAJ">8yZOrnUAAAAJ</a></span>
+  </div>
+</header>
+
+<h2>興味</h2>
+<p class="plain">超伝導・DFT</p>
+
+<h2>学歴</h2>
+<div class="entry"><div class="when">2025年4月 – 現在</div><div>
+  <p class="title">東京大学大学院 理学系研究科 物理学専攻 修士課程 在学中</p>
+  <p class="meta">指導教員：有田亮太郎</p>
+</div></div>
+<div class="entry"><div class="when">2021年4月 – 2025年3月</div><div>
+  <p class="title">東北大学 理学部 物理学科 卒業</p>
+  <p class="meta">指導教員：是常隆</p>
+  <p class="note">卒業研究：Al と H<sub>3</sub>S の超伝導ギャップ関数の第一原理 Migdal–Eliashberg 計算</p>
+</div></div>
+<div class="entry"><div class="when">2016年9月 – 2020年6月</div><div>
+  <p class="title">上海市進才中学 国際部</p>
+  <p class="meta">中国・上海 — 9〜12年生（11・12年生は国際バカロレア ディプロマ・プログラム）</p>
+</div></div>
+<div class="entry"><div class="when">2008年4月 – 2016年8月</div><div>
+  <p class="title">上海日本人学校 浦東校</p>
+  <p class="meta">中国・上海 — 小学1年〜中学3年</p>
+</div></div>
+
+<h2>論文</h2>
+<ol class="pubs">
+  <li lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, and R. Arita, “Microscopic calculation of coherence lengths and magnetic penetration depth in multiband superconductors,” <a href="https://arxiv.org/abs/2609.06014">arXiv:2609.06014</a> [cond-mat.supr-con] (2026)<span lang="ja">（査読中）</span></li>
+</ol>
+
+<h2>学会発表</h2>
+<h3>国際会議</h3>
+<div class="entry"><div class="when">2026年12月</div><div>
+  <p class="title"><span lang="en">Microscopic Calculation of Characteristic Length Scales in Multi-Band</span> <span class="nowrap"><span lang="en">Superconductors</span> <span class="tag type">ポスター</span> <span class="tag plan">発表予定</span></span></p>
+  <p class="meta" lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — International Quantum Materials Symposium <span class="nowrap">(i‑QMS 2026)</span>, Jeju, Korea</p>
+</div></div>
+<div class="entry"><div class="when">2026年11月</div><div>
+  <p class="title"><span lang="en">Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors from Microscopic</span> <span class="nowrap"><span lang="en">Calculations</span> <span class="tag type">ポスター</span> <span class="tag plan">発表予定</span></span></p>
+  <p class="meta" lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — International Workshop on Frontiers in <span class="nowrap">Ab-initio</span> Many-Body Interactions (FAMBI 2026), Sendai, Japan</p>
+</div></div>
+<div class="entry"><div class="when">2026年11月</div><div>
+  <p class="title"><span lang="en">Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors Based on Microscopic</span> <span class="nowrap"><span lang="en">Calculations</span> <span class="tag type">ポスター</span></span></p>
+  <p class="meta" lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — 27th Asian Workshop on First-Principles Electronic Structure Calculations (ASIAN-27), Kaohsiung, Taiwan</p>
+</div></div>
+<div class="entry"><div class="when">2026年9月</div><div>
+  <p class="title"><span lang="en">Microscopic Calculation of Coherence Lengths and Magnetic Penetration Depth in Multi-Band</span> <span class="nowrap"><span lang="en">Superconductors</span> <span class="tag type">ポスター</span></span></p>
+  <p class="meta" lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — International Conference on Strongly Correlated Electron Systems (SCES 2026), Toyama, Japan</p>
+</div></div>
+<div class="entry"><div class="when">2025年9月</div><div>
+  <p class="title"><span lang="en">Microscopic Calculation of Coherence Length and Magnetic Penetration Depth in</span> <span class="nowrap"><span lang="en">Superconductors</span> <span class="tag type">ポスター</span></span></p>
+  <p class="meta" lang="en"><span class="me">T. R. Fuchs</span>, T. Nomoto, H. Watanabe, R. Arita — Autumn School on Correlated Electrons: Understanding Correlated Materials with DMFT, Forschungszentrum Jülich, Germany</p>
+</div></div>
+<div class="entry"><div class="when">2026年</div><div>
+  <p class="title">ほかポスター発表3件</p>
+  <p class="meta"><span lang="en">CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo</span>（2026年11月、発表予定）· <span lang="en">International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Toyonaka</span>（2026年9月）· <span lang="en">CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako</span>（2026年2月）</p>
+</div></div>
+
+<h3>国内会議</h3>
+<div class="entry"><div class="when">2026年9月</div><div>
+  <p class="title">実空間BdG法に基づくコヒーレンス長と磁場侵入長の<span class="nowrap">計算 <span class="tag type">ポスター</span></span></p>
+  <p class="meta"><span class="me">フックストリスタン龍馬</span>、野本拓也、渡邉光、有田亮太郎</p>
+  <p class="meta">日本物理学会 第81回年次大会（領域6、東京大学 駒場キャンパス）</p>
+</div></div>
+<div class="entry"><div class="when">2026年9月</div><div>
+  <p class="title">多バンド超伝導体における長さスケールの拡張GL法に基づく<span class="nowrap">微視的計算 <span class="tag type">ポスター</span> <span class="tag award">優秀発表賞</span></span></p>
+  <p class="meta"><span class="me">フックストリスタン龍馬</span>、野本拓也、渡邉光、有田亮太郎</p>
+  <p class="meta">MERITキャンプ2026（いこいの村ヘリテイジ美の山、埼玉県皆野町）</p>
+</div></div>
+<div class="entry"><div class="when">2026年8月</div><div>
+  <p class="title">多バンド超伝導体におけるコヒーレンス長と磁場侵入長の拡張GL理論に基づく<span class="nowrap">微視的計算 <span class="tag type">口頭</span></span></p>
+  <p class="meta"><span class="me">フックストリスタン龍馬</span>、野本拓也、渡邉光、有田亮太郎</p>
+  <p class="meta">第71回物性若手夏の学校（阿蘇プラザホテル、熊本県阿蘇市）</p>
+</div></div>
+<div class="entry"><div class="when">2026年3月</div><div>
+  <p class="title">2バンド超伝導体におけるコヒーレンス長と磁場侵入長の<span class="nowrap">微視的計算 <span class="tag type">口頭</span></span></p>
+  <p class="meta"><span class="me">フックストリスタン龍馬</span>、野本拓也、渡邉光、有田亮太郎</p>
+  <p class="meta">日本物理学会 2026年春季大会（領域6、オンライン開催）</p>
+</div></div>
+<div class="entry"><div class="when">2026年3月</div><div>
+  <p class="title">2バンド超伝導体におけるコヒーレンス長および磁場侵入長の<span class="nowrap">微視的計算 <span class="tag type">ポスター</span> <span class="tag award">優秀ポスター賞</span></span></p>
+  <p class="meta"><span class="me">フックストリスタン龍馬</span>、野本拓也、渡邉光、有田亮太郎</p>
+  <p class="meta">計算物理春の学校2026（沖縄県那覇市）</p>
+</div></div>
+<div class="entry"><div class="when">2026年</div><div>
+  <p class="title">ほか4件（口頭1件、ポスター3件）</p>
+  <p class="meta">学術変革領域研究(A)「相関設計で挑む量子創発」2026年領域会議<span class="nowrap">（東京大学、2026年12月、発表予定）</span></p>
+  <p class="meta">第71回物性若手夏の学校（熊本県阿蘇市、2026年8月）</p>
+  <p class="meta">学術変革領域研究(A)「アシンメトリ量子」領域全体会議・公募研究キックオフ<span class="nowrap">（栃木県那須町、2026年5月）</span></p>
+  <p class="meta">第15期MERITコロキウム（東京大学、2026年1月、口頭）</p>
+</div></div>
+
+<h2>受賞・フェローシップ</h2>
+<div class="entry"><div class="when">2026年9月</div><div><p class="title">優秀発表賞 <span class="meta-inline">— MERITキャンプ2026</span></p></div></div>
+<div class="entry"><div class="when">2026年3月</div><div><p class="title">優秀ポスター賞 <span class="meta-inline">— 計算物理春の学校2026</span></p></div></div>
+<div class="entry"><div class="when">2025年10月 – 現在</div><div><p class="title">MERIT-WINGS コース生</p><p class="meta">東京大学 統合物質・情報国際卓越大学院（MERIT-WINGS）</p></div></div>
+
+<h2>経歴</h2>
+<div class="entry"><div class="when">2023年12月 – 現在</div><div>
+  <p class="title">教務研究員リーダー — 株式会社ナガセ</p>
+  <p class="meta">2024年10月 – 現在：四谷大塚での業務自動化ツール開発</p>
+  <p class="meta">2023年12月 – 2026年3月：東進デジタルユニバーシティでのプロジェクト管理</p>
+</div></div>
+<div class="entry"><div class="when">2024年度 前期</div><div>
+  <p class="title">ティーチング・アシスタント — 学問論</p>
+  <p class="meta">東北大学 全学教育</p>
+</div></div>
+
+<h2>課外活動</h2>
+<div class="entry"><div class="when">2025年10月 – 2026年9月</div><div><p class="title">MERITキャンプ 副代表 <span class="meta-inline">— 東京大学</span></p></div></div>
+<div class="entry"><div class="when">2023年10月 – 2025年3月</div><div><p class="title">附属図書館 北青葉山分館（理薬図書館） 学生スタッフ <span class="meta-inline">— 東北大学</span></p></div></div>
+<div class="entry"><div class="when">2022年4月 – 2023年3月</div><div><p class="title">ゼミサークル「物理の会」副代表 <span class="meta-inline">— 東北大学</span></p></div></div>
+
+<div class="cols">
+  <div>
+    <h2>資格</h2>
+    <div class="entry"><div class="when">2026年</div><div><p class="title">実用英語技能検定（英検）1級</p></div></div>
+    <div class="entry"><div class="when">2025年</div><div><p class="title">応用情報技術者試験</p></div></div>
+    <div class="entry"><div class="when">2024年</div><div><p class="title">TOEFL iBT 105</p></div></div>
+    <div class="entry"><div class="when">2024年</div><div><p class="title">TOEIC Listening &amp; Reading 960</p></div></div>
+    <div class="entry"><div class="when">2022年</div><div><p class="title">HSK（<span class="zh" lang="zh-Hans">汉语水平考试</span>）4級</p></div></div>
+  </div>
+  <div>
+    <h2>言語・スキル</h2>
+    <p class="plain"><b>言語：</b><span class="nowrap">日本語（母語）、</span><span class="nowrap">英語（流暢）、</span><span class="nowrap">ドイツ語（日常会話）、</span><span class="nowrap">中国語（初級）</span></p>
+    <p class="plain"><b>プログラミング：</b><span class="nowrap">Julia（研究の主要言語）、</span><span class="nowrap">Python、</span><span class="nowrap">Google Apps Script</span></p>
+  </div>
+</div>
+
+<p class="footer">最終更新：2026年11月</p>
+</body>
+</html>

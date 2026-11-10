@@ -126,7 +126,11 @@
          '<svg class="ico-mail" viewBox="0 0 24 24"><path d="M2 5h20v14H2z M4 7v.5l8 5 8-5V7H4z M4 9.8V17h16V9.8l-8 5z"/></svg>' +
          '<svg class="ico-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 17.3 4.2 12l1.5-1.5 3.8 3.8 8.8-8.8 1.5 1.5z"/></svg>' +
          '<span class="mail-label">' + bi(L.email) + '</span></button></li>';
-    h += '<li><a class="pill primary" href="' + attr(P.cv) + '" target="_blank" rel="noopener">' + bi(L.cv) + '</a></li>';
+    h += '<li>';                          // 履歴書は言語ごとに別の PDF（表示中の言語のボタンだけが見える）
+    ['en', 'ja'].forEach(function (l) {
+      h += '<a class="pill primary" lang="' + l + '" href="' + attr(P.cv[l]) + '" target="_blank" rel="noopener">' + L.cv[l] + '</a>';
+    });
+    h += '</li>';
     h += '</ul></div>';
     h += '<div><p class="side-label">' + bi(L.profiles) + '</p><ul class="pills icons">';
     P.profiles.forEach(function (a) {

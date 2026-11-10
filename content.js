@@ -61,7 +61,8 @@ window.SITE = {
 
     /* 連絡先。メールのボタンは押すと「user at domain」の形でクリップボードにコピーされる（@ は書かない） */
     email: { user: 'tristan', domain: 'g.ecc.u-tokyo.ac.jp' },
-    cv: 'assets/cv.pdf',
+    /* 履歴書の PDF。英語ページは cv.html、日本語ページは cv_ja.html を印刷したもの */
+    cv: { en: 'assets/cv.pdf', ja: 'assets/cv_ja.pdf' },
     labels: {
       contact:  { en: 'Contact',  ja: '連絡先' },
       email:    { en: 'Email',    ja: 'メール' },
