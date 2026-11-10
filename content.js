@@ -348,7 +348,7 @@ window.SITE = {
           meta: { en: 'Tohoku University', ja: '東北大学' }
         },
         {
-          when: { en: 'Apr – Jul 2024', ja: '2024年4月 – 7月' },
+          when: { en: 'Apr 2024 – Jul 2024', ja: '2024年4月 – 2024年7月' },
           title: { en: 'Teaching Assistant — 学問論 (first-year general education course)', ja: 'ティーチング・アシスタント — 学問論' },
           meta: { en: 'General Education, Tohoku University', ja: '東北大学 全学教育' }
         },
