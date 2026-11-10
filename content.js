@@ -320,10 +320,10 @@ window.SITE = {
       ]
     },
 
-    /* ===== 経験 ===== */
+    /* ===== 課外活動 ===== */
     {
       id: 'experience',
-      title: { en: 'Experience', ja: '経験' },
+      title: { en: 'Experience', ja: '課外活動' },
       type: 'entries',
       /* 教育・企業・課外を分けずに新しい順（継続中のものが先頭） */
       items: [
@@ -348,7 +348,7 @@ window.SITE = {
           meta: { en: 'Tohoku University', ja: '東北大学' }
         },
         {
-          when: { en: 'Spring 2024', ja: '2024年度 前期' },
+          when: { en: 'Apr – Jul 2024', ja: '2024年4月 – 7月' },
           title: { en: 'Teaching Assistant — 学問論 (first-year general education course)', ja: 'ティーチング・アシスタント — 学問論' },
           meta: { en: 'General Education, Tohoku University', ja: '東北大学 全学教育' }
         },
