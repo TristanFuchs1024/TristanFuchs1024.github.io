@@ -127,7 +127,7 @@ window.SITE = {
               id: 'pres-fambi2026',
               when: { en: 'Nov 2026', ja: '2026年11月' },
               title: 'Coherence Lengths and Magnetic Penetration Depth in Multiband Superconductors from Microscopic Calculations',
-              badges: [POSTER, UPCOMING],
+              badges: [POSTER],
               meta: AUTHORS_EN + ' — International Workshop on Frontiers in Ab-initio Many-Body Interactions (FAMBI 2026), Institute for Materials Research, Tohoku University, Sendai, Japan'
             },
             {
@@ -320,56 +320,42 @@ window.SITE = {
       ]
     },
 
-    /* ===== 経歴・活動 ===== */
+    /* ===== 経験 ===== */
     {
       id: 'experience',
-      title: { en: 'Experience', ja: '経歴・活動' },
-      type: 'groups',
-      groups: [
+      title: { en: 'Experience', ja: '経験' },
+      type: 'entries',
+      /* 教育・企業・課外を分けずに新しい順（継続中のものが先頭） */
+      items: [
         {
-          title: { en: 'Teaching', ja: '教育活動' },
-          items: [
-            {
-              when: { en: 'Spring 2024', ja: '2024年度 前期' },
-              title: { en: 'Teaching Assistant — 学問論 (first-year general education course)', ja: 'ティーチング・アシスタント — 学問論' },
-              meta: { en: 'General Education, Tohoku University', ja: '東北大学 全学教育' }
-            }
+          when: { en: 'Dec 2023 – present', ja: '2023年12月 – 現在' },
+          title: { en: 'Student Staff Lead — Nagase Brothers Inc.', ja: '教務研究員リーダー — 株式会社ナガセ' },
+          notes: [
+            { en: 'Oct 2024 – present: development of internal automation tools at Yotsuya Otsuka',
+              ja: '2024年10月 – 現在：四谷大塚での業務自動化ツール開発' },
+            { en: 'Dec 2023 – Mar 2026: project management at Toshin Digital University',
+              ja: '2023年12月 – 2026年3月：東進デジタルユニバーシティでのプロジェクト管理' }
           ]
         },
         {
-          title: { en: 'Industry', ja: '企業での活動' },
-          items: [
-            {
-              when: { en: 'Dec 2023 – present', ja: '2023年12月 – 現在' },
-              title: { en: 'Student Staff Lead — Nagase Brothers Inc.', ja: '教務研究員リーダー — 株式会社ナガセ' },
-              notes: [
-                { en: 'Oct 2024 – present: development of internal automation tools at Yotsuya Otsuka',
-                  ja: '2024年10月 – 現在：四谷大塚での業務自動化ツール開発' },
-                { en: 'Dec 2023 – Mar 2026: project management at Toshin Digital University',
-                  ja: '2023年12月 – 2026年3月：東進デジタルユニバーシティでのプロジェクト管理' }
-              ]
-            }
-          ]
+          when: { en: 'Oct 2025 – Sep 2026', ja: '2025年10月 – 2026年9月' },
+          title: { en: 'Deputy Organizer, MERIT Camp', ja: 'MERITキャンプ 副代表' },
+          meta: { en: 'The University of Tokyo', ja: '東京大学' }
         },
         {
-          title: { en: 'Extracurricular Activities', ja: '課外活動' },
-          items: [
-            {
-              when: { en: 'Oct 2025 – Sep 2026', ja: '2025年10月 – 2026年9月' },
-              title: { en: 'Deputy Organizer, MERIT Camp', ja: 'MERITキャンプ 副代表' },
-              meta: { en: 'The University of Tokyo', ja: '東京大学' }
-            },
-            {
-              when: { en: 'Oct 2023 – Mar 2025', ja: '2023年10月 – 2025年3月' },
-              title: { en: 'Student Staff, Kita-Aobayama Library (Science &amp; Pharmacy Library)', ja: '附属図書館 北青葉山分館（理薬図書館） 学生スタッフ' },
-              meta: { en: 'Tohoku University', ja: '東北大学' }
-            },
-            {
-              when: { en: 'Apr 2022 – Mar 2023', ja: '2022年4月 – 2023年3月' },
-              title: { en: 'Vice President, 物理の会 (“Butsuri no Kai”, physics seminar society)', ja: 'ゼミサークル「物理の会」副代表' },
-              meta: { en: 'Tohoku University', ja: '東北大学' }
-            }
-          ]
+          when: { en: 'Oct 2023 – Mar 2025', ja: '2023年10月 – 2025年3月' },
+          title: { en: 'Student Staff, Kita-Aobayama Library (Science &amp; Pharmacy Library)', ja: '附属図書館 北青葉山分館（理薬図書館） 学生スタッフ' },
+          meta: { en: 'Tohoku University', ja: '東北大学' }
+        },
+        {
+          when: { en: 'Spring 2024', ja: '2024年度 前期' },
+          title: { en: 'Teaching Assistant — 学問論 (first-year general education course)', ja: 'ティーチング・アシスタント — 学問論' },
+          meta: { en: 'General Education, Tohoku University', ja: '東北大学 全学教育' }
+        },
+        {
+          when: { en: 'Apr 2022 – Mar 2023', ja: '2022年4月 – 2023年3月' },
+          title: { en: 'Vice President, 物理の会 (“Butsuri no Kai”, physics seminar society)', ja: 'ゼミサークル「物理の会」副代表' },
+          meta: { en: 'Tohoku University', ja: '東北大学' }
         }
       ]
     },
