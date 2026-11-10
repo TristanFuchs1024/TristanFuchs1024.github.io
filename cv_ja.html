@@ -9,14 +9,14 @@
   @page { size: A4; margin: 12mm 15mm 12mm 15mm; }
   :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3;
          /* 余白のつまみ（行間・項目の上下・見出しの上）。内容を増減したらここで 2 ページに合わせる */
-         --lh:1.42; --gap:.7mm; --sec:3.4mm; --sub:2.2mm; }
+         --lh:1.5; --gap:1.05mm; --sec:4.4mm; --sub:2.8mm; }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   /* 1ページ = .page 1つ。本文領域いっぱいの高さにして、余った分はブロックの間へ均等に配る（下端まで使い切る） */
   .page{ min-height:272.6mm; display:flex; flex-direction:column; justify-content:space-between; }
   .page + .page{ break-before:page; }
   .page > :first-child{ margin-top:0; }
-  .page:first-child{ --gap:.85mm; --sec:4.4mm; }   /* 1ページ目は余りが多いので広め */
+  .page:first-child{ --gap:1.35mm; --sec:5.4mm; }   /* 1ページ目は余りが多いので広め */
   body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
         font-size:9.3pt; line-height:var(--lh); line-break:strict; word-break:auto-phrase; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   a{ color:var(--link); text-decoration:none; }
@@ -128,7 +128,6 @@
 </div></div>
 <div class="entry"><div class="when">2026年</div><div>
   <p class="title">その他3件</p>
-  <p class="meta"><span lang="en">CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo</span>（2026年11月、発表予定）· <span lang="en">International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Toyonaka</span>（2026年9月）· <span lang="en">CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako</span>（2026年2月）</p>
 </div></div>
 
 </div>
@@ -162,10 +161,6 @@
 </div></div>
 <div class="entry"><div class="when">2026年</div><div>
   <p class="title">その他4件</p>
-  <p class="meta">学術変革領域研究(A)「相関設計で挑む量子創発」2026年領域会議<span class="nowrap">（東京大学、2026年12月、発表予定）</span></p>
-  <p class="meta">第71回物性若手夏の学校（熊本県阿蘇市、2026年8月）</p>
-  <p class="meta">学術変革領域研究(A)「アシンメトリ量子」領域全体会議・公募研究キックオフ<span class="nowrap">（栃木県那須町、2026年5月）</span></p>
-  <p class="meta">第15期MERITコロキウム（東京大学、2026年1月）</p>
 </div></div>
 
 <h2>受賞・フェローシップ</h2>
@@ -173,7 +168,7 @@
 <div class="entry"><div class="when">2026年3月</div><div><p class="title">優秀ポスター賞 <span class="meta-inline">— 計算物理春の学校2026</span></p></div></div>
 <div class="entry"><div class="when">2025年10月 – 現在</div><div><p class="title">MERIT-WINGS コース生</p><p class="meta">東京大学 統合物質・情報国際卓越大学院（MERIT-WINGS）</p></div></div>
 
-<h2>活動</h2>
+<h2>課外活動</h2>
 <div class="entry"><div class="when">2023年12月 – 現在</div><div>
   <p class="title">教務研究員リーダー — 株式会社ナガセ</p>
   <p class="meta">2024年10月 – 現在：四谷大塚での業務自動化ツール開発</p>

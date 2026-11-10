@@ -9,14 +9,14 @@
   @page { size: A4; margin: 12mm 15mm 12mm 15mm; }
   :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3;
          /* 余白のつまみ（行間・項目の上下・見出しの上）。内容を増減したらここで 2 ページに合わせる */
-         --lh:1.35; --gap:.85mm; --sec:3.8mm; --sub:2.4mm; }
+         --lh:1.40; --gap:1.1mm; --sec:4.6mm; --sub:3.0mm; }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   /* 1ページ = .page 1つ。本文領域いっぱいの高さにして、余った分はブロックの間へ均等に配る（下端まで使い切る） */
   .page{ min-height:272.6mm; display:flex; flex-direction:column; justify-content:space-between; }
   .page + .page{ break-before:page; }
   .page > :first-child{ margin-top:0; }
-  .page:first-child{ --gap:1.05mm; --sec:4.6mm; }   /* 1ページ目は余りが多いので広め */
+  .page:first-child{ --gap:1.5mm; --sec:5.6mm; }   /* 1ページ目は余りが多いので広め */
   body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
         font-size:9.3pt; line-height:var(--lh); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   a{ color:var(--link); text-decoration:none; }
@@ -126,7 +126,6 @@
 </div></div>
 <div class="entry"><div class="when">2026</div><div>
   <p class="title">3 other presentations</p>
-  <p class="meta">CDS × QUAST Joint Workshop: Frontiers in Correlated Quantum Matter, The University of Tokyo (Nov 2026, scheduled) · International Conference on Asymmetric Quantum Matters (Asymmetry 2026), Toyonaka (Sep 2026) · CEMS Topical Meeting on Recent Trends in Superconductivity, RIKEN, Wako (Feb 2026)</p>
 </div></div>
 
 </div>
@@ -155,7 +154,6 @@
 </div></div>
 <div class="entry"><div class="when">2026</div><div>
   <p class="title">4 other presentations</p>
-  <p class="meta">Annual Meeting of “Correlation Design Science,” The University of Tokyo (Dec 2026, scheduled) · 71st Condensed Matter Physics Summer School <span class="nowrap">(<span lang="ja">物性若手夏の学校</span>)</span>, Aso (Aug 2026) · Kickoff Meeting of the Transformative Research Area (A) “Asymmetric Quantum Matters,” Nasu (May 2026) · 15th MERIT Colloquium, The University of Tokyo (Jan 2026) — all in Japanese</p>
 </div></div>
 
 <h2>Awards and Fellowships</h2>
