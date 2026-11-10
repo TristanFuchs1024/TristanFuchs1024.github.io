@@ -293,7 +293,7 @@ window.SITE = {
           notes: [
             { en: 'Supervisor: <a href="http://www.cmpt.phys.tohoku.ac.jp/u/koretsune/index.html" target="_blank" rel="noopener">Takashi Koretsune</a>',
               ja: '指導教員：<a href="http://www.cmpt.phys.tohoku.ac.jp/u/koretsune/index_j.html" target="_blank" rel="noopener">是常隆</a>' },
-            { en: 'First-principles Migdal–Eliashberg calculation of the superconducting gap functions of Al and H<sub>3</sub>S',
+            { en: 'First-principles Migdal–Eliashberg calculation of the superconducting gap functions in Al and H<sub>3</sub>S',
               ja: '卒業研究：Al と H<sub>3</sub>S の超伝導ギャップ関数の第一原理 Migdal–Eliashberg 計算' }
           ]
         },
