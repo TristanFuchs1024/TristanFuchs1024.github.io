@@ -8,17 +8,17 @@
   /* ---- 日本語版 CV。見た目は cv.html と同じ（日付の列が広く、行間が少し広い） ---- */
   @page { size: A4; margin: 12mm 12mm 12mm 12mm; }
   :root{ --teal:#3AB0A2; --teal-dark:#3F8070; --link:#2E6659; --ink:#171A18; --ink-soft:#4A4F4C; --muted:#6F7371; --rule:#D1D1D3;
-         /* 組み方のつまみ: --fs 本文の字の大きさ（ほかの字はこの倍率）と --lh 行間。内容を増減したらこの 2 つで 2 ページに合わせる */
-         --fs:10pt; --lh:1.42;
+         /* 組み方のつまみ（全ページ共通）: --fs 本文の字の大きさ、--lh 行間、--k 余白の倍率。内容を増減したらこの 3 つで 2 ページに合わせる */
+         --fs:10.5pt; --lh:1.42; --k:.69;
+         /* 字の大きさは本文に対する 4 段だけ: 小（タグ・フッター）／本文（日付・連絡先・小見出しも）／大（節の見出し・名前の読み）／名前 */
+         --t-s:.9em; --t-l:1.2em; --t-xl:2.2em;
          /* 日付の列の幅: 期間を書く欄（学歴など）／年月だけの欄（学会発表）／年だけの欄（資格） */
-         --when:10.8em; --when-ym:5.4em; --when-y:3.6em; }
+         --when:11.2em; --when-ym:5.4em; --when-y:3.3em; }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   /* 1ページ = .page 1つ。余白は 1 行の高さの 1/4（--u）の倍数だけで作る: 見出しとその中身 1〜2u ＜ 項目の間 2u（半行）＜ 節の間 4u（1 行）。
-     --k はそのページの余白全部に掛ける倍率（比は変わらない）。下端まで埋まる値を print_cv.mjs が表示する。残った端数は節の区切りが吸う */
-  .page{ --k:1; --u:calc(var(--fs) * var(--lh) / 4 * var(--k)); min-height:272.6mm; display:flex; flex-direction:column; }
-  .page:nth-child(1){ --k:1.04; }
-  .page:nth-child(2){ --k:1.32; }
+     どのページも同じ値（同じ種類の余白はどこでも同じ）。ページの下に残った分は下にそのまま残す（2 ページ目はフッターの上） */
+  .page{ --u:calc(var(--fs) * var(--lh) / 4 * var(--k)); min-height:272.6mm; display:flex; flex-direction:column; }
   .page + .page{ break-before:page; }
   body{ font-family:"Noto Sans JP","Noto Sans SC","Hiragino Sans","Yu Gothic UI","Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink);
         font-size:var(--fs); line-height:var(--lh); line-break:strict; word-break:auto-phrase; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -27,31 +27,31 @@
 
   /* header */
   header{ display:flex; justify-content:space-between; align-items:flex-end; gap:8mm; padding-bottom:calc(3 * var(--u)); border-bottom:2.5pt solid var(--teal); }
-  h1{ font-size:2.15em; font-weight:900; margin:0; letter-spacing:.01em; line-height:1.15; }
-  .name-sub{ font-size:1.13em; font-weight:500; color:var(--ink-soft); margin:var(--u) 0 0; }
-  .role{ margin:calc(2 * var(--u)) 0 0; font-size:1.1em; color:var(--ink-soft); line-height:1.45; }
-  .contact{ display:grid; grid-template-columns:auto auto; column-gap:2.2mm; row-gap:.2mm; align-content:end; font-size:.97em; color:var(--ink-soft); line-height:1.55; white-space:nowrap; }
+  h1{ font-size:var(--t-xl); font-weight:900; margin:0; letter-spacing:.01em; line-height:1.15; }
+  .name-sub{ font-size:var(--t-l); font-weight:500; color:var(--ink-soft); margin:var(--u) 0 0; }
+  .role{ margin:calc(2 * var(--u)) 0 0; color:var(--ink-soft); }
+  .contact{ display:grid; grid-template-columns:auto auto; column-gap:2.2mm; align-content:end; color:var(--ink-soft); white-space:nowrap; }
   .contact .k{ text-align:left; }
   .contact .v{ text-align:right; }
   .contact b{ color:var(--ink); font-weight:700; }
 
   /* sections */
-  h2{ font-size:1.16em; font-weight:900; color:var(--teal-dark); margin:auto 0 0; padding:calc(4 * var(--u)) 0 calc(.5 * var(--u)); border-bottom:1pt solid var(--rule);
+  h2{ font-size:var(--t-l); font-weight:900; color:var(--teal-dark); margin:0; padding:calc(4 * var(--u)) 0 calc(.5 * var(--u)); border-bottom:1pt solid var(--rule);
       letter-spacing:.06em; }
-  h3{ font-size:1.02em; font-weight:700; color:var(--teal-dark); margin:calc(3 * var(--u)) 0 0; }
+  h3{ font-size:1em; font-weight:700; color:var(--teal-dark); margin:calc(3 * var(--u)) 0 0; }
   h2 + h3{ margin-top:calc(2 * var(--u)); }
   .page > h3:first-child{ margin-top:0; }
   .entry{ display:grid; grid-template-columns:var(--when) 1fr; column-gap:1.1em; align-items:baseline; margin-top:calc(2 * var(--u)); }
   h3 + .entry{ margin-top:var(--u); }
   .entry.ym{ grid-template-columns:var(--when-ym) 1fr; }
-  .cols .entry{ grid-template-columns:var(--when-y) 1fr; column-gap:.9em; }
-  .entry .when{ color:var(--muted); font-size:.935em; white-space:nowrap; }
+  .cols .entry{ grid-template-columns:var(--when-y) 1fr; }
+  .entry .when{ color:var(--muted); font-size:1em; white-space:nowrap; }
   .entry .title{ font-weight:700; margin:0; }
   .entry .meta{ color:var(--ink-soft); margin:0; }
   .meta-inline{ color:var(--ink-soft); font-weight:400; }
   .entry .note{ color:var(--ink-soft); margin:0; }
-  .tag{ display:inline-block; font-size:.82em; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.3mm 1.6mm; border-radius:2pt;
-        line-height:1.32; vertical-align:middle; margin-left:1.2mm; }
+  .tag{ display:inline-block; font-size:var(--t-s); font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.3mm 1.6mm; border-radius:2pt;
+        line-height:1.25; vertical-align:.05em; margin-left:1.2mm; }
   .tag.type{ background:#EFF7F5; color:var(--teal-dark); }
   .tag.award{ background:#FBEDE6; color:#C94A18; }
   .tag.plan{ border:1pt solid var(--muted); color:var(--muted); padding:.1mm 1.4mm; }
@@ -63,9 +63,9 @@
   ol.pubs li{ margin:0; }
   ol.pubs li + li{ margin-top:var(--u); }
   .plain{ margin:calc(2 * var(--u)) 0 0; }
-  .cols{ display:grid; grid-template-columns:1fr 1.25fr; column-gap:2.2em; margin-top:auto; padding-top:calc(4 * var(--u)); }
-  .cols h2{ margin:0; padding-top:0; }
-  .footer{ margin:auto 0 0; padding-top:calc(3 * var(--u)); font-size:.915em; color:var(--muted); text-align:right; }
+  .cols{ display:grid; grid-template-columns:1fr 1.25fr; column-gap:2.2em; padding-top:calc(4 * var(--u)); }
+  .cols h2{ padding-top:0; }
+  .footer{ margin:auto 0 0; padding-top:calc(3 * var(--u)); font-size:var(--t-s); color:var(--muted); text-align:right; }
 </style>
 </head>
 <body>
@@ -187,21 +187,16 @@
 <div class="entry"><div class="when">2024年4月 – 2024年7月</div><div><p class="title">ティーチング・アシスタント（学問論） <span class="meta-inline">— 東北大学</span></p></div></div>
 <div class="entry"><div class="when">2022年4月 – 2023年3月</div><div><p class="title">ゼミサークル「物理の会」副代表 <span class="meta-inline">— 東北大学</span></p></div></div>
 
-<div class="cols">
-  <div>
-    <h2>資格</h2>
-    <div class="entry"><div class="when">2026年</div><div><p class="title">実用英語技能検定（英検）1級</p></div></div>
-    <div class="entry"><div class="when">2025年</div><div><p class="title">応用情報技術者試験</p></div></div>
-    <div class="entry"><div class="when">2024年</div><div><p class="title">TOEFL iBT 105</p></div></div>
-    <div class="entry"><div class="when">2024年</div><div><p class="title">TOEIC Listening &amp; Reading 960</p></div></div>
-    <div class="entry"><div class="when">2022年</div><div><p class="title">HSK（<span class="zh" lang="zh-Hans">汉语水平考试</span>）4級</p></div></div>
-  </div>
-  <div>
-    <h2>言語・スキル</h2>
-    <p class="plain"><b>言語：</b><span class="nowrap">日本語（母国語）、</span><span class="nowrap">英語（ネイティブレベル）、</span><span class="nowrap">中国語（日常会話レベル）、</span><span class="nowrap">ドイツ語（日常会話レベル）</span></p>
-    <p class="plain"><b>プログラミング：</b><span class="nowrap">Julia、</span><span class="nowrap">Python、</span><span class="nowrap">JavaScript、</span><span class="nowrap">Fortran</span></p>
-  </div>
-</div>
+<h2>資格</h2>
+<div class="entry"><div class="when">2026年</div><div><p class="title">実用英語技能検定（英検）1級</p></div></div>
+<div class="entry"><div class="when">2025年</div><div><p class="title">応用情報技術者試験</p></div></div>
+<div class="entry"><div class="when">2024年</div><div><p class="title">TOEFL iBT 105</p></div></div>
+<div class="entry"><div class="when">2024年</div><div><p class="title">TOEIC Listening &amp; Reading 960</p></div></div>
+<div class="entry"><div class="when">2022年</div><div><p class="title">HSK（<span class="zh" lang="zh-Hans">汉语水平考试</span>）4級</p></div></div>
+
+<h2>言語・スキル</h2>
+<p class="plain"><b>言語：</b><span class="nowrap">日本語（母国語）、</span><span class="nowrap">英語（ネイティブレベル）、</span><span class="nowrap">中国語（日常会話レベル）、</span><span class="nowrap">ドイツ語（日常会話レベル）</span></p>
+<p class="plain"><b>プログラミング：</b><span class="nowrap">Julia、</span><span class="nowrap">Python、</span><span class="nowrap">JavaScript、</span><span class="nowrap">Fortran</span></p>
 
 <p class="footer">最終更新：2026年11月</p>
 </div>
